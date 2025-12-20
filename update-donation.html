@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Update your donation information">
+    <title>Update Donation - CrossLife Ministry</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>CrossLife</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="studies.html">Bible Studies</a></li>
+                    <li><a href="teachings.html">Teachings</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="donate.html" class="donate-btn">Donate</a></li>
+                </ul>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Update Your Donation</h1>
+                <p>Need to change your donation amount or information?</p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-form-container" style="max-width: 700px; margin: 0 auto;">
+                    <h2>Donation Update Request</h2>
+                    <p>Please fill out this form and we'll get back to you within 24 hours to assist with your donation update.</p>
+                    
+                    <form class="contact-form" id="donationUpdateForm" data-netlify="true" data-netlify-recaptcha="true" name="donation-update">
+                        <input type="hidden" name="form-name" value="donation-update">
+                        
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="request-type">Type of Update *</label>
+                            <select id="request-type" name="request-type" required>
+                                <option value="">Select update type...</option>
+                                <option value="change-amount">Change Donation Amount</option>
+                                <option value="update-payment">Update Payment Method</option>
+                                <option value="update-info">Update Personal Information</option>
+                                <option value="cancel-recurring">Cancel Recurring Donation</option>
+                                <option value="pause-recurring">Pause Recurring Donation</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="details">Details of Your Request *</label>
+                            <textarea id="details" name="details" rows="6" required placeholder="Please provide details about the changes you'd like to make..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="donor-email">Email Used for Original Donation</label>
+                            <input type="email" id="donor-email" name="donor-email" placeholder="If different from above">
+                            <p class="small-text">This helps us locate your donation record</p>
+                        </div>
+
+                        <div class="form-group">
+                            <div data-netlify-recaptcha="true"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Submit Request</button>
+                        </div>
+
+                        <p class="form-note">* Required fields</p>
+                        <p class="small-text">Your information is secure and will only be used to process your donation update request.</p>
+                    </form>
+
+                    <div id="form-response" class="form-response" style="display: none;"></div>
+                </div>
+
+                <div class="help-section" style="max-width: 700px; margin: 2rem auto; padding: 1.5rem; background-color: var(--bg-light); border-radius: var(--border-radius);">
+                    <h3>Need Immediate Assistance?</h3>
+                    <p>For urgent donation matters, you can also reach us at:</p>
+                    <p><strong>Email:</strong> <a href="mailto:jonathan@crosslife.org">jonathan@crosslife.org</a></p>
+                    <p class="small-text">We typically respond within 24 hours during business days.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CrossLife Ministry</h3>
+                    <p>Equipping believers through biblical teaching</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="studies.html">Bible Studies</a></li>
+                        <li><a href="teachings.html">Teachings</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support Our Ministry</h4>
+                    <p>Your generosity helps us continue providing free biblical resources.</p>
+                    <a href="donate.html" class="btn btn-small">Donate Now</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Stay Connected</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">Facebook</a>
+                        <a href="#" aria-label="YouTube">YouTube</a>
+                        <a href="#" aria-label="Email">Email</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CrossLife Ministry. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
