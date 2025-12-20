@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact CrossLife Ministry">
+    <title>Contact Us - CrossLife Ministry</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>CrossLife</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="studies.html">Bible Studies</a></li>
+                    <li><a href="teachings.html">Teachings</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="donate.html" class="donate-btn">Donate</a></li>
+                </ul>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <p>We'd love to hear from you</p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h2>Get in Touch</h2>
+                        <p>Have questions about our ministry, resources, or teachings? Want to share how God is using our materials in your life? We'd love to hear from you!</p>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="method-icon">📧</div>
+                                <h3>Email</h3>
+                                <p><a href="mailto:info@crosslife.org">info@crosslife.org</a></p>
+                                <p class="small-text">We typically respond within 24-48 hours</p>
+                            </div>
+
+                            <div class="contact-method">
+                                <div class="method-icon">📍</div>
+                                <h3>Mailing Address</h3>
+                                <p>CrossLife Ministry<br>
+                                [Your Street Address]<br>
+                                [City, State ZIP]</p>
+                            </div>
+
+                            <div class="contact-method">
+                                <div class="method-icon">🔗</div>
+                                <h3>Social Media</h3>
+                                <div class="social-links-vertical">
+                                    <a href="#">Facebook</a>
+                                    <a href="#">YouTube</a>
+                                    <a href="#">Instagram</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-link">
+                            <h3>Before You Contact</h3>
+                            <p>Looking for general information? Check out our <a href="about.html">About page</a> or browse our <a href="resources.html">Resources</a>.</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container">
+                        <h2>Send Us a Message</h2>
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select a subject...</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="resources">Question About Resources</option>
+                                    <option value="technical">Technical Support</option>
+                                    <option value="speaking">Speaking Invitation</option>
+                                    <option value="partnership">Ministry Partnership</option>
+                                    <option value="prayer">Prayer Request</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" rows="6" required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </div>
+
+                            <p class="form-note">* Required fields</p>
+                        </form>
+
+                        <div id="form-response" class="form-response" style="display: none;"></div>
+
+                        <!-- Note: This form needs backend processing. You can:
+                             1. Use a form service like Formspree, Netlify Forms, or Web3Forms
+                             2. Integrate with your email service
+                             3. Use a serverless function
+                             
+                             For Netlify Forms, add: data-netlify="true" to the <form> tag
+                             For Formspree, add: action="https://formspree.io/f/YOUR_FORM_ID" method="POST"
+                        -->
+                    </div>
+                </div>
+
+                <div class="prayer-request-section">
+                    <h2>Prayer Requests</h2>
+                    <p>We would be honored to pray for you. Share your prayer request with us, and our team will lift you up in prayer.</p>
+                    <a href="mailto:prayer@crosslife.org?subject=Prayer Request" class="btn btn-secondary">Submit Prayer Request</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CrossLife Ministry</h3>
+                    <p>Equipping believers through biblical teaching</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="studies.html">Bible Studies</a></li>
+                        <li><a href="teachings.html">Teachings</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support Our Ministry</h4>
+                    <p>Your generosity helps us continue providing free biblical resources.</p>
+                    <a href="donate.html" class="btn btn-small">Donate Now</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Stay Connected</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">Facebook</a>
+                        <a href="#" aria-label="YouTube">YouTube</a>
+                        <a href="#" aria-label="Email">Email</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CrossLife Ministry. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
