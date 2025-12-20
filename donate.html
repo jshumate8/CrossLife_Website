@@ -74,24 +74,11 @@
 
                     <div class="donate-box">
                         <h2>Make Your Gift Today</h2>
-                        <p>Choose your preferred donation method:</p>
+                        <p>Your generous donation enables CrossLife Ministry to continue providing free biblical teaching and study resources to believers around the world.</p>
                         
-                        <div class="donation-methods">
-                            <a href="https://donorbox.org/crosslifedonations" 
-                               class="donate-method-btn primary" 
-                               target="_blank" 
-                               rel="noopener">
-                                <span class="method-icon">🎁</span>
-                                <span class="method-name">Give Now</span>
-                                <span class="method-description">Make a one-time or recurring gift</span>
-                            </a>
-
-                            <div class="donate-method-btn check">
-                                <span class="method-icon">✉️</span>
-                                <span class="method-name">Mail a Check</span>
-                                <span class="method-description">Make payable to CrossLife Ministry<br>
-                                [Add your mailing address here]</span>
-                            </div>
+                        <div class="donation-form-container" style="margin: 2rem 0; background: white; padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
+                            <script type="module" src="https://donorbox.org/widgets.js" async></script>
+                            <dbox-widget campaign="crosslifedonations" type="donation_form" interval="1 M" amount="100" enable-auto-scroll="true"></dbox-widget>
                         </div>
 
                         <div class="recurring-info">
@@ -102,9 +89,11 @@
                         <div class="other-ways">
                             <h4>Other Ways to Give</h4>
                             <ul>
-                                <li>Stock or securities transfer</li>
-                                <li>Estate planning / planned giving</li>
-                                <li>Donor-advised fund</li>
+                                <li><strong>Mail a Check:</strong> Make payable to CrossLife Ministry<br>
+                                <span style="font-size: 0.9rem; color: var(--text-light);">[Add your mailing address here]</span></li>
+                                <li><strong>Stock or Securities Transfer:</strong> Contact us for transfer instructions</li>
+                                <li><strong>Estate Planning / Planned Giving:</strong> Include CrossLife in your legacy</li>
+                                <li><strong>Donor-Advised Fund:</strong> Recommend a grant to CrossLife Ministry</li>
                             </ul>
                             <p>For information on these options, please <a href="contact.html">contact us</a>.</p>
                         </div>
