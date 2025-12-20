@@ -150,6 +150,17 @@
 
     <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script>
+        // Initialize Netlify Identity
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/";
+                    });
+                }
+            });
+        }
+        
         // Handle login button click
         document.addEventListener('DOMContentLoaded', function() {
             const loginBtn = document.getElementById('loginBtn');
