@@ -150,55 +150,62 @@
 
     <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script>
-        // Initialize Netlify Identity
-        if (window.netlifyIdentity) {
-            window.netlifyIdentity.on("init", user => {
-                if (!user) {
-                    window.netlifyIdentity.on("login", () => {
-                        document.location.href = "/";
-                    });
-                }
-            });
-            
-            // Close modal after signup
-            window.netlifyIdentity.on("signup", () => {
-                window.netlifyIdentity.close();
-            });
+        // Wait for Netlify Identity to load
+        function initIdentity() {
+            if (window.netlifyIdentity) {
+                // Initialize Netlify Identity
+                window.netlifyIdentity.on("init", user => {
+                    setupLoginButton(user);
+                });
+                
+                // Close modal after signup
+                window.netlifyIdentity.on("signup", () => {
+                    window.netlifyIdentity.close();
+                });
+                
+                // Handle login/logout events
+                window.netlifyIdentity.on('login', () => {
+                    window.netlifyIdentity.close();
+                    location.reload();
+                });
+                
+                window.netlifyIdentity.on('logout', () => {
+                    location.reload();
+                });
+            }
         }
         
-        // Handle login button click
-        document.addEventListener('DOMContentLoaded', function() {
+        function setupLoginButton(user) {
             const loginBtn = document.getElementById('loginBtn');
             const navStudies = document.getElementById('nav-studies');
             const navTeachings = document.getElementById('nav-teachings');
             const navResources = document.getElementById('nav-resources');
-            const user = netlifyIdentity.currentUser();
+            
+            if (!loginBtn) return;
             
             if (user) {
                 loginBtn.textContent = 'Logout';
                 loginBtn.onclick = function() {
-                    netlifyIdentity.logout();
+                    window.netlifyIdentity.logout();
                 };
                 // Show protected nav items
                 if (navStudies) navStudies.style.display = 'list-item';
                 if (navTeachings) navTeachings.style.display = 'list-item';
                 if (navResources) navResources.style.display = 'list-item';
             } else {
+                loginBtn.textContent = 'Login';
                 loginBtn.onclick = function() {
-                    netlifyIdentity.open();
+                    window.netlifyIdentity.open();
                 };
             }
-            
-            // Handle login/logout events
-            netlifyIdentity.on('login', () => {
-                netlifyIdentity.close();
-                location.reload();
-            });
-            
-            netlifyIdentity.on('logout', () => {
-                location.reload();
-            });
-        });
+        }
+        
+        // Initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initIdentity);
+        } else {
+            initIdentity();
+        }
     </script>
     <script src="js/main.js"></script>
 </body>
