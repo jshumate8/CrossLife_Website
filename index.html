@@ -159,6 +159,11 @@
                     });
                 }
             });
+            
+            // Close modal after signup
+            window.netlifyIdentity.on("signup", () => {
+                window.netlifyIdentity.close();
+            });
         }
         
         // Handle login button click
