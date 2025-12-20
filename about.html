@@ -17,9 +17,9 @@
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html" class="active">About</a></li>
-                    <li><a href="studies.html">Bible Studies</a></li>
-                    <li><a href="teachings.html">Teachings</a></li>
-                    <li><a href="resources.html">Resources</a></li>
+                    <li id="nav-studies" style="display: none;"><a href="studies.html">Bible Studies</a></li>
+                    <li id="nav-teachings" style="display: none;"><a href="teachings.html">Teachings</a></li>
+                    <li id="nav-resources" style="display: none;"><a href="resources.html">Resources</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="donate.html" class="donate-btn">Donate</a></li>
                     <li><a href="#" id="loginBtn" class="login-btn">Login</a></li>
@@ -144,5 +144,20 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+        // Show/hide navigation items based on authentication status
+        document.addEventListener('DOMContentLoaded', function() {
+            const user = netlifyIdentity.currentUser();
+            const navStudies = document.getElementById('nav-studies');
+            const navTeachings = document.getElementById('nav-teachings');
+            const navResources = document.getElementById('nav-resources');
+            
+            if (user && navStudies && navTeachings && navResources) {
+                navStudies.style.display = 'list-item';
+                navTeachings.style.display = 'list-item';
+                navResources.style.display = 'list-item';
+            }
+        });
+    </script>
 </body>
 </html>

@@ -17,9 +17,9 @@
                 <ul class="nav-links">
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="studies.html">Bible Studies</a></li>
-                    <li><a href="teachings.html">Teachings</a></li>
-                    <li><a href="resources.html">Resources</a></li>
+                    <li id="nav-studies" style="display: none;"><a href="studies.html">Bible Studies</a></li>
+                    <li id="nav-teachings" style="display: none;"><a href="teachings.html">Teachings</a></li>
+                    <li id="nav-resources" style="display: none;"><a href="resources.html">Resources</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="donate.html" class="donate-btn">Donate</a></li>
                     <li><a href="#" id="loginBtn" class="login-btn">Login</a></li>
@@ -169,6 +169,9 @@
         // Handle login button click
         document.addEventListener('DOMContentLoaded', function() {
             const loginBtn = document.getElementById('loginBtn');
+            const navStudies = document.getElementById('nav-studies');
+            const navTeachings = document.getElementById('nav-teachings');
+            const navResources = document.getElementById('nav-resources');
             const user = netlifyIdentity.currentUser();
             
             if (user) {
@@ -177,6 +180,10 @@
                     e.preventDefault();
                     netlifyIdentity.logout();
                 };
+                // Show protected nav items
+                if (navStudies) navStudies.style.display = 'list-item';
+                if (navTeachings) navTeachings.style.display = 'list-item';
+                if (navResources) navResources.style.display = 'list-item';
             } else {
                 loginBtn.onclick = function(e) {
                     e.preventDefault();
