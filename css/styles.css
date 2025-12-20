@@ -144,6 +144,18 @@ ul {
     transform: translateY(-2px);
 }
 
+.login-btn {
+    background-color: var(--primary-color) !important;
+    color: var(--bg-white) !important;
+    padding: var(--spacing-xs) var(--spacing-md) !important;
+    font-weight: 600;
+}
+
+.login-btn:hover {
+    background-color: #1a3d4d !important;
+    transform: translateY(-2px);
+}
+
 .mobile-menu-toggle {
     display: none;
     flex-direction: column;

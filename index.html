@@ -22,6 +22,7 @@
                     <li><a href="resources.html">Resources</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="donate.html" class="donate-btn">Donate</a></li>
+                    <li><a href="#" id="loginBtn" class="login-btn">Login</a></li>
                 </ul>
                 <div class="mobile-menu-toggle">
                     <span></span>
@@ -147,6 +148,37 @@
         </div>
     </footer>
 
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+        // Handle login button click
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginBtn = document.getElementById('loginBtn');
+            const user = netlifyIdentity.currentUser();
+            
+            if (user) {
+                loginBtn.textContent = 'Logout';
+                loginBtn.onclick = function(e) {
+                    e.preventDefault();
+                    netlifyIdentity.logout();
+                };
+            } else {
+                loginBtn.onclick = function(e) {
+                    e.preventDefault();
+                    netlifyIdentity.open();
+                };
+            }
+            
+            // Handle login/logout events
+            netlifyIdentity.on('login', () => {
+                netlifyIdentity.close();
+                location.reload();
+            });
+            
+            netlifyIdentity.on('logout', () => {
+                location.reload();
+            });
+        });
+    </script>
     <script src="js/main.js"></script>
 </body>
 </html>
