@@ -22,7 +22,7 @@
                     <li id="nav-resources" style="display: none;"><a href="resources.html">Resources</a></li>
                     <li><a href="contact.html" class="active">Contact</a></li>
                     <li><a href="donate.html" class="donate-btn">Donate</a></li>
-                    <li><a href="#" id="loginBtn" class="login-btn">Login</a></li>
+                    <li><button type="button" id="loginBtn" class="login-btn">Login</button></li>
                 </ul>
                 <div class="mobile-menu-toggle">
                     <span></span>
@@ -194,8 +194,7 @@
             
             if (user) {
                 loginBtn.textContent = 'Logout';
-                loginBtn.onclick = function(e) {
-                    e.preventDefault();
+                loginBtn.onclick = function() {
                     netlifyIdentity.logout();
                 };
                 // Show protected nav items
@@ -203,8 +202,7 @@
                 if (navTeachings) navTeachings.style.display = 'list-item';
                 if (navResources) navResources.style.display = 'list-item';
             } else {
-                loginBtn.onclick = function(e) {
-                    e.preventDefault();
+                loginBtn.onclick = function() {
                     netlifyIdentity.open();
                 };
             }

@@ -149,6 +149,12 @@ ul {
     color: var(--bg-white) !important;
     padding: var(--spacing-xs) var(--spacing-md) !important;
     font-weight: 600;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-family: var(--font-secondary);
+    transition: var(--transition);
 }
 
 .login-btn:hover {
