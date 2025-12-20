@@ -170,18 +170,40 @@
 
     <script src="js/main.js"></script>
     <script>
-        // Show/hide navigation items based on authentication status
+        // Handle login button click and navigation visibility
         document.addEventListener('DOMContentLoaded', function() {
-            const user = netlifyIdentity.currentUser();
+            const loginBtn = document.getElementById('loginBtn');
             const navStudies = document.getElementById('nav-studies');
             const navTeachings = document.getElementById('nav-teachings');
             const navResources = document.getElementById('nav-resources');
+            const user = netlifyIdentity.currentUser();
             
-            if (user && navStudies && navTeachings && navResources) {
-                navStudies.style.display = 'list-item';
-                navTeachings.style.display = 'list-item';
-                navResources.style.display = 'list-item';
+            if (user) {
+                loginBtn.textContent = 'Logout';
+                loginBtn.onclick = function(e) {
+                    e.preventDefault();
+                    netlifyIdentity.logout();
+                };
+                // Show protected nav items
+                if (navStudies) navStudies.style.display = 'list-item';
+                if (navTeachings) navTeachings.style.display = 'list-item';
+                if (navResources) navResources.style.display = 'list-item';
+            } else {
+                loginBtn.onclick = function(e) {
+                    e.preventDefault();
+                    netlifyIdentity.open();
+                };
             }
+            
+            // Handle login/logout events
+            netlifyIdentity.on('login', () => {
+                netlifyIdentity.close();
+                location.reload();
+            });
+            
+            netlifyIdentity.on('logout', () => {
+                location.reload();
+            });
         });
     </script>
 </body>
