@@ -99,11 +99,6 @@
                                     transform: translateY(-2px);
                                     box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
                                 }
-                                /* Prevent page shift when modal opens */
-                                body.donorbox-popup-open {
-                                    overflow: hidden !important;
-                                    padding-right: 0 !important;
-                                }
                                 /* Center the Donorbox popup modal */
                                 div[id*="donorbox"] {
                                     position: fixed !important;
@@ -211,6 +206,33 @@
 
         <script src="js/main.js"></script>
     <script>
+        // Prevent page shift when Donorbox modal opens by compensating for scrollbar width
+        (function() {
+            var scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+            
+            // Watch for when Donorbox adds elements to the page
+            var observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    mutation.addedNodes.forEach(function(node) {
+                        if (node.nodeType === 1 && node.id && node.id.indexOf('donorbox') !== -1) {
+                            // Modal is opening - add padding to compensate for scrollbar
+                            document.body.style.paddingRight = scrollbarWidth + 'px';
+                            document.body.style.overflow = 'hidden';
+                        }
+                    });
+                    mutation.removedNodes.forEach(function(node) {
+                        if (node.nodeType === 1 && node.id && node.id.indexOf('donorbox') !== -1) {
+                            // Modal is closing - remove padding
+                            document.body.style.paddingRight = '';
+                            document.body.style.overflow = '';
+                        }
+                    });
+                });
+            });
+            
+            observer.observe(document.body, { childList: true });
+        })();
+        
         if (typeof netlifyIdentity !== 'undefined') {
             netlifyIdentity.on('init', function(user) {
                 var state = user ? 'logged-in' : 'logged-out';
