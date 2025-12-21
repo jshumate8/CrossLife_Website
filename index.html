@@ -186,10 +186,13 @@
                     const navResources = document.getElementById('nav-resources');
                     
                     if (user && loginBtn) {
+                        console.log('User is logged in:', user.email);
                         loginBtn.textContent = 'Logout';
                         if (navStudies) navStudies.style.display = 'list-item';
                         if (navTeachings) navTeachings.style.display = 'list-item';
                         if (navResources) navResources.style.display = 'list-item';
+                    } else {
+                        console.log('No user logged in');
                     }
                 });
                 
