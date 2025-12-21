@@ -23,6 +23,16 @@
   [headers.values]
     Cache-Control = "no-store, no-cache, must-revalidate"
 
+[[headers]]
+  for = "/studies/*/*.md"
+  [headers.values]
+    Cache-Control = "no-store, no-cache, must-revalidate"
+
+[[headers]]
+  for = "/studies/*/course.json"
+  [headers.values]
+    Cache-Control = "no-store, no-cache, must-revalidate"
+
 [build]
   publish = "."
   command = "" # No build command needed - static site only
