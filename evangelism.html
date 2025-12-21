@@ -7,21 +7,16 @@
     <title>Evangelism - CrossLife Ministry</title>
     <link rel="stylesheet" href="css/styles.css">
     <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script>
-        if (netlifyIdentity) {
-            netlifyIdentity.on('init', function(user) {
-                if (user) {
-                    document.documentElement.classList.add('logged-in');
-                } else {
-                    document.documentElement.classList.add('logged-out');
-                }
-            });
-        }
+        <script>
+        (function() {
+            var authState = localStorage.getItem('crosslife-auth-state') || 'logged-out';
+            document.documentElement.className = authState;
+        })();
     </script>
     <style>
-        #nav-logged-out, #nav-logged-in { display: none !important; }
-        .logged-out #nav-logged-out { display: flex !important; }
-        .logged-in #nav-logged-in { display: flex !important; }
+        #nav-logged-out, #nav-logged-in { display: none; }
+        .logged-out #nav-logged-out { display: flex; }
+        .logged-in #nav-logged-in { display: flex; }
     </style>
 </head>
 <body>
@@ -31,7 +26,19 @@
                 <div class="logo">
                     <a href="index.html"><h1>CrossLife</h1></a>
                 </div>
-                <div id="nav-container"></div>
+                <ul class="nav-links" id="nav-logged-out">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="donate.html" class="donate-btn">Donate</a></li>
+                    <li><button type="button" id="loginBtn" class="login-btn">Login</button></li>
+                </ul>
+                <ul class="nav-links" id="nav-logged-in">
+                    <li><a href="study.html">Study</a></li>
+                    <li><a href="watch.html">Watch</a></li>
+                    <li><a href="evangelism.html">Evangelism</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="donate.html" class="donate-btn">Donate</a></li>
+                    <li><button type="button" id="logoutBtn" class="login-btn">Logout</button></li>
+                </ul>
                 <div class="mobile-menu-toggle">
                     <span></span>
                     <span></span>
@@ -188,8 +195,32 @@
         </div>
     </footer>
 
-    <script src="js/nav-loader.js"></script>
-    <script src="js/main.js"></script>
+        <script src="js/main.js"></script>
+    <script>
+        if (typeof netlifyIdentity !== 'undefined') {
+            var loginBtn = document.getElementById('loginBtn');
+            var logoutBtn = document.getElementById('logoutBtn');
+            if (loginBtn) loginBtn.onclick = function() { netlifyIdentity.open(); };
+            if (logoutBtn) logoutBtn.onclick = function() { netlifyIdentity.logout(); };
+            netlifyIdentity.on('init', function(user) {
+                var state = user ? 'logged-in' : 'logged-out';
+                localStorage.setItem('crosslife-auth-state', state);
+                document.documentElement.className = state;
+            });
+            netlifyIdentity.on('login', function() {
+                localStorage.setItem('crosslife-auth-state', 'logged-in');
+                document.documentElement.className = 'logged-in';
+                netlifyIdentity.close();
+            });
+            netlifyIdentity.on('logout', function() {
+                localStorage.setItem('crosslife-auth-state', 'logged-out');
+                document.documentElement.className = 'logged-out';
+            });
+        }
+    </script>
     <script>requireAuth();</script>
 </body>
 </html>
+
+
+
