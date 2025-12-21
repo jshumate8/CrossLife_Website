@@ -74,7 +74,16 @@
                     </div>
                 </div>
 
-                <div class="studies-grid">
+                <div class="studies-grid" id="studies-grid">
+                    <!-- Studies will be loaded dynamically -->
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 3rem; color: var(--text-light);">
+                        Loading studies...
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="study-features">
                     <!-- Exegetical Studies - New Testament -->
                     <div class="study-card" data-category="new-testament">
                         <div class="study-image">
@@ -628,7 +637,20 @@
     </footer>
 
         <script src="js/main.js"></script>
+    <script src="js/resources.js"></script>
     <script>
+        // Initialize resource manager and load studies
+        (async function() {
+            const resourceManager = new ResourceManager();
+            await resourceManager.loadResources();
+            
+            // Initial render - show all courses
+            resourceManager.renderCourses('studies-grid');
+            
+            // Initialize filters
+            initializeResourceFilters(resourceManager);
+        })();
+        
         if (typeof netlifyIdentity !== 'undefined') {
             // Handle logout FIRST to update localStorage before requireAuth redirects
             netlifyIdentity.on('logout', function() {

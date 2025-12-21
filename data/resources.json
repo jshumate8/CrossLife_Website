@@ -1,0 +1,81 @@
+{
+  "courses": [
+    {
+      "id": "genesis",
+      "title": "Genesis: In the Beginning",
+      "description": "A comprehensive study through the book of Genesis, exploring God's creation, covenant, and the foundations of redemptive history.",
+      "type": "bible-study",
+      "book": "Genesis",
+      "testament": "Old Testament",
+      "tags": ["Pentateuch", "Torah", "Creation", "Covenant", "Patriarchs", "Origins"],
+      "lessons": 50,
+      "weeks": 50,
+      "thumbnail": "images/studies/genesis-thumb.jpg",
+      "level": "All Levels",
+      "status": "in-progress"
+    },
+    {
+      "id": "exodus",
+      "title": "Exodus: Redemption and Deliverance",
+      "description": "Journey through Israel's deliverance from Egypt, the giving of the Law, and the establishment of the covenant community.",
+      "type": "bible-study",
+      "book": "Exodus",
+      "testament": "Old Testament",
+      "tags": ["Pentateuch", "Torah", "Redemption", "Law", "Covenant", "Moses", "Tabernacle"],
+      "lessons": 40,
+      "weeks": 40,
+      "thumbnail": "images/studies/exodus-thumb.jpg",
+      "level": "All Levels",
+      "status": "planned"
+    },
+    {
+      "id": "leviticus",
+      "title": "Leviticus: The Way of Holiness",
+      "description": "Discover God's call to holiness through the sacrificial system, priestly duties, and laws that set apart His people.",
+      "type": "bible-study",
+      "book": "Leviticus",
+      "testament": "Old Testament",
+      "tags": ["Pentateuch", "Torah", "Holiness", "Sacrifice", "Priesthood", "Law", "Worship"],
+      "lessons": 27,
+      "weeks": 27,
+      "thumbnail": "images/studies/leviticus-thumb.jpg",
+      "level": "Intermediate",
+      "status": "planned"
+    },
+    {
+      "id": "numbers",
+      "title": "Numbers: Wilderness Wanderings",
+      "description": "Follow Israel's 40-year journey through the wilderness, learning lessons of faith, rebellion, and God's faithfulness.",
+      "type": "bible-study",
+      "book": "Numbers",
+      "testament": "Old Testament",
+      "tags": ["Pentateuch", "Torah", "Faith", "Obedience", "Wilderness", "Testing"],
+      "lessons": 36,
+      "weeks": 36,
+      "thumbnail": "images/studies/numbers-thumb.jpg",
+      "level": "All Levels",
+      "status": "planned"
+    },
+    {
+      "id": "deuteronomy",
+      "title": "Deuteronomy: Love and Obey",
+      "description": "Moses' final sermons calling Israel to love God wholeheartedly and obey His commands as they enter the Promised Land.",
+      "type": "bible-study",
+      "book": "Deuteronomy",
+      "testament": "Old Testament",
+      "tags": ["Pentateuch", "Torah", "Obedience", "Covenant", "Love", "Law"],
+      "lessons": 34,
+      "weeks": 34,
+      "thumbnail": "images/studies/deuteronomy-thumb.jpg",
+      "level": "All Levels",
+      "status": "planned"
+    }
+  ],
+  "tags": {
+    "testament": ["Old Testament", "New Testament"],
+    "bibleSection": ["Pentateuch", "Historical Books", "Wisdom Literature", "Major Prophets", "Minor Prophets", "Gospels", "Acts", "Pauline Epistles", "General Epistles", "Apocalyptic"],
+    "topics": ["Creation", "Covenant", "Redemption", "Law", "Holiness", "Faith", "Obedience", "Grace", "Salvation", "Love", "Prayer", "Worship", "Prophecy", "End Times"],
+    "themes": ["God's Character", "Human Nature", "Sin and Redemption", "Kingdom of God", "Church", "Christian Living", "Spiritual Warfare", "Family", "Leadership"],
+    "studyType": ["Book Study", "Topical Study", "Character Study", "Theological Study", "Historical Study"]
+  }
+}
