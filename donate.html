@@ -169,51 +169,41 @@
     </footer>
 
     <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    netlifyIdentity.on("login", () => {
+                        document.location.href = "/";
+                    });
+                }
+            });
+        }
+    </script>
     <script src="js/main.js"></script>
     <script>
-        // Initialize after Identity widget loads
-        window.addEventListener('DOMContentLoaded', function() {
-            const loginBtn = document.getElementById('loginBtn');
-            
-            // Setup click handler
-            if (loginBtn) {
-                loginBtn.addEventListener('click', function() {
-                    if (window.netlifyIdentity) {
-                        const user = window.netlifyIdentity.currentUser();
-                        if (user) {
-                            window.netlifyIdentity.logout();
-                        } else {
-                            window.netlifyIdentity.open('login');
-                        }
-                    }
-                });
-            }
-            
-            // Update UI on init
-            if (window.netlifyIdentity) {
-                window.netlifyIdentity.on("init", user => {
-                    const navStudies = document.getElementById('nav-studies');
-                    const navTeachings = document.getElementById('nav-teachings');
-                    const navResources = document.getElementById('nav-resources');
-                    
-                    if (user && loginBtn) {
-                        loginBtn.textContent = 'Logout';
-                        if (navStudies) navStudies.style.display = 'list-item';
-                        if (navTeachings) navTeachings.style.display = 'list-item';
-                        if (navResources) navResources.style.display = 'list-item';
-                    }
-                });
-                
-                window.netlifyIdentity.on('login', () => {
-                    window.netlifyIdentity.close();
-                    location.reload();
-                });
-                
-                window.netlifyIdentity.on('logout', () => {
-                    location.reload();
-                });
+        const loginBtn = document.getElementById('loginBtn');
+        if (loginBtn) {
+            loginBtn.onclick = function() {
+                if (netlifyIdentity.currentUser()) {
+                    netlifyIdentity.logout();
+                } else {
+                    netlifyIdentity.open();
+                }
+            };
+        }
+
+        netlifyIdentity.on('init', user => {
+            if (user) {
+                loginBtn.textContent = 'Logout';
+                document.getElementById('nav-studies').style.display = 'list-item';
+                document.getElementById('nav-teachings').style.display = 'list-item';
+                document.getElementById('nav-resources').style.display = 'list-item';
             }
         });
+
+        netlifyIdentity.on('login', () => location.reload());
+        netlifyIdentity.on('logout', () => location.reload());
     </script>
 </body>
 </html>

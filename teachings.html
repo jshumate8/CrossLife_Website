@@ -199,18 +199,39 @@
 
     <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script>
-        // Authentication check - redirect if not logged in
         if (window.netlifyIdentity) {
             window.netlifyIdentity.on("init", user => {
                 if (!user) {
                     window.location.href = '/index.html';
                 }
             });
-        } else {
-            // If Identity widget fails to load, redirect
-            window.location.href = '/index.html';
         }
     </script>
     <script src="js/main.js"></script>
+    <script>
+        const loginBtn = document.getElementById('loginBtn');
+        if (loginBtn) {
+            loginBtn.onclick = function() {
+                if (netlifyIdentity.currentUser()) {
+                    netlifyIdentity.logout();
+                } else {
+                    netlifyIdentity.open();
+                }
+            };
+        }
+
+        netlifyIdentity.on('init', user => {
+            if (user) {
+                loginBtn.textContent = 'Logout';
+                document.getElementById('nav-studies').style.display = 'list-item';
+                document.getElementById('nav-teachings').style.display = 'list-item';
+                document.getElementById('nav-resources').style.display = 'list-item';
+            }
+        });
+
+        netlifyIdentity.on('logout', () => {
+            window.location.href = '/index.html';
+        });
+    </script>
 </body>
 </html>
