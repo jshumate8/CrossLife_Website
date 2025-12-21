@@ -36,7 +36,6 @@
 [build]
   publish = "."
   command = "" # No build command needed - static site only
-  ignore = "exit 0" # Always deploy (or use "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF ." to skip if no changes)
   
 [build.processing]
   skip_processing = false # Set to true if you want to skip all asset optimization
