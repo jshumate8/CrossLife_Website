@@ -334,6 +334,12 @@ setActiveNavLink();
 function initNetlifyIdentity() {
     if (typeof netlifyIdentity === 'undefined') return;
     
+    // Immediately check and update UI if user is already logged in
+    const currentUser = netlifyIdentity.currentUser();
+    if (currentUser) {
+        updateAuthUI(currentUser);
+    }
+    
     const loginBtn = document.getElementById('loginBtn');
     
     // Login button handler
