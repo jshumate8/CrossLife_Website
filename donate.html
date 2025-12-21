@@ -209,24 +209,23 @@
             });
         }
         
-        // Prevent Donorbox widget from auto-scrolling
-        var scrollPosition = 0;
-        window.addEventListener('load', function() {
-            scrollPosition = window.pageYOffset;
-            // Monitor for unwanted scroll changes
-            var scrollTimer;
+        // Prevent automatic scrolling when Donorbox widget loads
+        // Store initial scroll position and restore it if changed automatically
+        (function() {
+            var initialScroll = window.pageYOffset || document.documentElement.scrollTop;
+            var hasUserScrolled = false;
+            
             window.addEventListener('scroll', function() {
-                clearTimeout(scrollTimer);
-                scrollTimer = setTimeout(function() {
-                    if (Math.abs(window.pageYOffset - scrollPosition) > 100 && window.pageYOffset > 0) {
-                        // Only prevent if scrolled significantly (likely by widget)
-                        window.scrollTo(0, scrollPosition);
-                    } else {
-                        scrollPosition = window.pageYOffset;
-                    }
-                }, 50);
-            });
-        });
+                hasUserScrolled = true;
+            }, { once: true, passive: true });
+            
+            // After widget loads, if user hasn't scrolled, keep position at top
+            setTimeout(function() {
+                if (!hasUserScrolled && window.pageYOffset !== initialScroll) {
+                    window.scrollTo(0, initialScroll);
+                }
+            }, 6000); // Wait 6 seconds for widget to fully load
+        })();
     </script>
 </body>
 </html>
