@@ -215,6 +215,12 @@
         <script src="js/main.js"></script>
     <script>
         if (typeof netlifyIdentity !== 'undefined') {
+            // Handle logout FIRST to update localStorage before requireAuth redirects
+            netlifyIdentity.on('logout', function() {
+                localStorage.setItem('crosslife-auth-state', 'logged-out');
+                document.documentElement.className = 'logged-out';
+            });
+            
             netlifyIdentity.on('init', function(user) {
                 var state = user ? 'logged-in' : 'logged-out';
                 localStorage.setItem('crosslife-auth-state', state);
@@ -226,14 +232,11 @@
                 if (loginBtn) loginBtn.onclick = function() { netlifyIdentity.open(); };
                 if (logoutBtn) logoutBtn.onclick = function() { netlifyIdentity.logout(); };
             });
+            
             netlifyIdentity.on('login', function() {
                 localStorage.setItem('crosslife-auth-state', 'logged-in');
                 document.documentElement.className = 'logged-in';
                 netlifyIdentity.close();
-            });
-            netlifyIdentity.on('logout', function() {
-                localStorage.setItem('crosslife-auth-state', 'logged-out');
-                document.documentElement.className = 'logged-out';
             });
         }
     </script>
