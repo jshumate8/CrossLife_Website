@@ -187,17 +187,6 @@
     </footer>
 
     <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script>
-        if (window.netlifyIdentity) {
-            window.netlifyIdentity.on("init", user => {
-                if (!user) {
-                    netlifyIdentity.on("login", () => {
-                        document.location.href = "/";
-                    });
-                }
-            });
-        }
-    </script>
     <script src="js/main.js"></script>
     <script>
         const loginBtn = document.getElementById('loginBtn');
@@ -220,7 +209,14 @@
             }
         });
 
-        netlifyIdentity.on('login', () => location.reload());
+        netlifyIdentity.on('login', user => {
+            netlifyIdentity.close();
+            loginBtn.textContent = 'Logout';
+            document.getElementById('nav-studies').style.display = 'list-item';
+            document.getElementById('nav-teachings').style.display = 'list-item';
+            document.getElementById('nav-resources').style.display = 'list-item';
+        });
+        
         netlifyIdentity.on('logout', () => location.reload());
     </script>
 </body>
