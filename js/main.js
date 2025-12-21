@@ -33,7 +33,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Smooth scroll for anchor links
     initializeSmoothScroll();
     
-    // Initialize Netlify Identity
+    // Initialize Netlify Identity - must happen after DOM is ready
+    if (typeof netlifyIdentity !== 'undefined') {
+        netlifyIdentity.init();
+    }
     initNetlifyIdentity();
 });
 
@@ -334,12 +337,6 @@ setActiveNavLink();
 function initNetlifyIdentity() {
     if (typeof netlifyIdentity === 'undefined') return;
     
-    // Immediately check and update UI if user is already logged in
-    const currentUser = netlifyIdentity.currentUser();
-    if (currentUser) {
-        updateAuthUI(currentUser);
-    }
-    
     const loginBtn = document.getElementById('loginBtn');
     
     // Login button handler
@@ -349,17 +346,28 @@ function initNetlifyIdentity() {
         };
     }
     
-    // Update UI based on auth state
+    // Update UI based on auth state - this fires after init
     netlifyIdentity.on('init', function() {
-        updateAuthUI(netlifyIdentity.currentUser());
+        const user = netlifyIdentity.currentUser();
+        updateAuthUI(user);
     });
+    
     netlifyIdentity.on('login', function(user) {
         netlifyIdentity.close();
         updateAuthUI(user);
     });
+    
     netlifyIdentity.on('logout', function() {
         location.reload();
     });
+    
+    // Also update immediately in case init already happened
+    setTimeout(function() {
+        const user = netlifyIdentity.currentUser();
+        if (user) {
+            updateAuthUI(user);
+        }
+    }, 100);
 }
 
 function updateAuthUI(user) {
