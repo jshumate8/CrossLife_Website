@@ -138,6 +138,11 @@ ul {
     align-items: center;
 }
 
+.nav-links li {
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+
 .nav-links a {
     color: var(--text-dark);
     font-weight: 600;

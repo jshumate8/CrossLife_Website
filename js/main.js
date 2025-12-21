@@ -358,16 +358,8 @@ function initNetlifyIdentity() {
     });
     
     netlifyIdentity.on('logout', function() {
-        location.reload();
+        updateAuthUI(null);
     });
-    
-    // Also update immediately in case init already happened
-    setTimeout(function() {
-        const user = netlifyIdentity.currentUser();
-        if (user) {
-            updateAuthUI(user);
-        }
-    }, 100);
 }
 
 function updateAuthUI(user) {
