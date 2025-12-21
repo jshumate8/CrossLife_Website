@@ -5,33 +5,225 @@
   "lessons": [
     {
       "number": 1,
-      "title": "The Census at Sinai",
-      "passage": "Numbers 1:1-54",
+      "title": "Introduction to Numbers",
+      "passage": "Overview",
       "file": "lesson-01.md"
     },
     {
       "number": 2,
-      "title": "The Arrangement of the Camp",
-      "passage": "Numbers 2:1-34",
+      "title": "The Census at Sinai",
+      "passage": "Numbers 1:1-54",
       "file": "lesson-02.md"
     },
     {
       "number": 3,
-      "title": "The Levites Set Apart",
-      "passage": "Numbers 3:1-51",
+      "title": "The Arrangement of the Camp",
+      "passage": "Numbers 2:1-34",
       "file": "lesson-03.md"
     },
     {
       "number": 4,
-      "title": "Duties of the Levites",
-      "passage": "Numbers 4:1-49",
+      "title": "The Levites Set Apart",
+      "passage": "Numbers 3:1-51",
       "file": "lesson-04.md"
     },
     {
       "number": 5,
+      "title": "Duties of the Levites",
+      "passage": "Numbers 4:1-49",
+      "file": "lesson-05.md"
+    },
+    {
+      "number": 6,
       "title": "Purity in the Camp",
       "passage": "Numbers 5:1-31",
-      "file": "lesson-05.md"
+      "file": "lesson-06.md"
+    },
+    {
+      "number": 7,
+      "title": "The Nazirite Vow",
+      "passage": "Numbers 6:1-27",
+      "file": "lesson-07.md"
+    },
+    {
+      "number": 8,
+      "title": "Offerings from the Leaders",
+      "passage": "Numbers 7:1-89",
+      "file": "lesson-08.md"
+    },
+    {
+      "number": 9,
+      "title": "Setting Up the Lamps",
+      "passage": "Numbers 8:1-26",
+      "file": "lesson-09.md"
+    },
+    {
+      "number": 10,
+      "title": "The Second Passover",
+      "passage": "Numbers 9:1-23",
+      "file": "lesson-10.md"
+    },
+    {
+      "number": 11,
+      "title": "Silver Trumpets and Departure from Sinai",
+      "passage": "Numbers 10:1-36",
+      "file": "lesson-11.md"
+    },
+    {
+      "number": 12,
+      "title": "The People Complain",
+      "passage": "Numbers 11:1-35",
+      "file": "lesson-12.md"
+    },
+    {
+      "number": 13,
+      "title": "Miriam and Aaron Oppose Moses",
+      "passage": "Numbers 12:1-16",
+      "file": "lesson-13.md"
+    },
+    {
+      "number": 14,
+      "title": "Exploring Canaan",
+      "passage": "Numbers 13:1-33",
+      "file": "lesson-14.md"
+    },
+    {
+      "number": 15,
+      "title": "The People Rebel",
+      "passage": "Numbers 14:1-45",
+      "file": "lesson-15.md"
+    },
+    {
+      "number": 16,
+      "title": "Supplementary Offerings",
+      "passage": "Numbers 15:1-41",
+      "file": "lesson-16.md"
+    },
+    {
+      "number": 17,
+      "title": "Korah's Rebellion",
+      "passage": "Numbers 16:1-50",
+      "file": "lesson-17.md"
+    },
+    {
+      "number": 18,
+      "title": "Aaron's Staff Buds",
+      "passage": "Numbers 17:1-13",
+      "file": "lesson-18.md"
+    },
+    {
+      "number": 19,
+      "title": "Duties of Priests and Levites",
+      "passage": "Numbers 18:1-32",
+      "file": "lesson-19.md"
+    },
+    {
+      "number": 20,
+      "title": "The Water of Cleansing",
+      "passage": "Numbers 19:1-22",
+      "file": "lesson-20.md"
+    },
+    {
+      "number": 21,
+      "title": "Water from the Rock",
+      "passage": "Numbers 20:1-13",
+      "file": "lesson-21.md"
+    },
+    {
+      "number": 22,
+      "title": "Edom Denies Passage",
+      "passage": "Numbers 20:14-21",
+      "file": "lesson-22.md"
+    },
+    {
+      "number": 23,
+      "title": "Death of Aaron",
+      "passage": "Numbers 20:22-29",
+      "file": "lesson-23.md"
+    },
+    {
+      "number": 24,
+      "title": "The Bronze Serpent",
+      "passage": "Numbers 21:1-35",
+      "file": "lesson-24.md"
+    },
+    {
+      "number": 25,
+      "title": "Balak Summons Balaam",
+      "passage": "Numbers 22:1-41",
+      "file": "lesson-25.md"
+    },
+    {
+      "number": 26,
+      "title": "Balaam's Oracles",
+      "passage": "Numbers 23:1-24:25",
+      "file": "lesson-26.md"
+    },
+    {
+      "number": 27,
+      "title": "Moab Seduces Israel",
+      "passage": "Numbers 25:1-18",
+      "file": "lesson-27.md"
+    },
+    {
+      "number": 28,
+      "title": "The Second Census",
+      "passage": "Numbers 26:1-65",
+      "file": "lesson-28.md"
+    },
+    {
+      "number": 29,
+      "title": "Zelophehad's Daughters",
+      "passage": "Numbers 27:1-11",
+      "file": "lesson-29.md"
+    },
+    {
+      "number": 30,
+      "title": "Joshua to Succeed Moses",
+      "passage": "Numbers 27:12-23",
+      "file": "lesson-30.md"
+    },
+    {
+      "number": 31,
+      "title": "Daily and Festival Offerings",
+      "passage": "Numbers 28:1-29:40",
+      "file": "lesson-31.md"
+    },
+    {
+      "number": 32,
+      "title": "Vows and Oaths",
+      "passage": "Numbers 30:1-16",
+      "file": "lesson-32.md"
+    },
+    {
+      "number": 33,
+      "title": "Vengeance on the Midianites",
+      "passage": "Numbers 31:1-54",
+      "file": "lesson-33.md"
+    },
+    {
+      "number": 34,
+      "title": "The Transjordan Tribes",
+      "passage": "Numbers 32:1-42",
+      "file": "lesson-34.md"
+    },
+    {
+      "number": 35,
+      "title": "Stages in Israel's Journey",
+      "passage": "Numbers 33:1-56",
+      "file": "lesson-35.md"
+    },
+    {
+      "number": 36,
+      "title": "Boundaries of Canaan",
+      "passage": "Numbers 34:1-29",
+      "file": "lesson-36.md"
+    },
+    {
+      "number": 37,
+      "title": "Towns for the Levites and Cities of Refuge",
+      "passage": "Numbers 35:1-34",
+      "file": "lesson-37.md"
     }
   ]
 }

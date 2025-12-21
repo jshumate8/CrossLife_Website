@@ -5,33 +5,213 @@
   "lessons": [
     {
       "number": 1,
-      "title": "Moses' First Address Begins",
-      "passage": "Deuteronomy 1:1-46",
+      "title": "Introduction to Deuteronomy",
+      "passage": "Overview",
       "file": "lesson-01.md"
     },
     {
       "number": 2,
-      "title": "Wandering in the Wilderness",
-      "passage": "Deuteronomy 2:1-37",
+      "title": "Moses' First Address: The Command to Leave Horeb",
+      "passage": "Deuteronomy 1:1-46",
       "file": "lesson-02.md"
     },
     {
       "number": 3,
-      "title": "Victory Over Og King of Bashan",
-      "passage": "Deuteronomy 3:1-29",
+      "title": "Wandering in the Wilderness",
+      "passage": "Deuteronomy 2:1-37",
       "file": "lesson-03.md"
     },
     {
       "number": 4,
-      "title": "Obedience Commanded",
-      "passage": "Deuteronomy 4:1-49",
+      "title": "Victory Over Og King of Bashan",
+      "passage": "Deuteronomy 3:1-29",
       "file": "lesson-04.md"
     },
     {
       "number": 5,
-      "title": "The Ten Commandments",
-      "passage": "Deuteronomy 5:1-33",
+      "title": "Obedience Commanded",
+      "passage": "Deuteronomy 4:1-49",
       "file": "lesson-05.md"
+    },
+    {
+      "number": 6,
+      "title": "The Ten Commandments Repeated",
+      "passage": "Deuteronomy 5:1-33",
+      "file": "lesson-06.md"
+    },
+    {
+      "number": 7,
+      "title": "Love the Lord Your God",
+      "passage": "Deuteronomy 6:1-25",
+      "file": "lesson-07.md"
+    },
+    {
+      "number": 8,
+      "title": "Driving Out the Nations",
+      "passage": "Deuteronomy 7:1-26",
+      "file": "lesson-08.md"
+    },
+    {
+      "number": 9,
+      "title": "Do Not Forget the Lord",
+      "passage": "Deuteronomy 8:1-20",
+      "file": "lesson-09.md"
+    },
+    {
+      "number": 10,
+      "title": "Not Because of Israel's Righteousness",
+      "passage": "Deuteronomy 9:1-29",
+      "file": "lesson-10.md"
+    },
+    {
+      "number": 11,
+      "title": "New Tablets of Stone",
+      "passage": "Deuteronomy 10:1-22",
+      "file": "lesson-11.md"
+    },
+    {
+      "number": 12,
+      "title": "Love and Obey the Lord",
+      "passage": "Deuteronomy 11:1-32",
+      "file": "lesson-12.md"
+    },
+    {
+      "number": 13,
+      "title": "The One Place of Worship",
+      "passage": "Deuteronomy 12:1-32",
+      "file": "lesson-13.md"
+    },
+    {
+      "number": 14,
+      "title": "Worshiping Other Gods",
+      "passage": "Deuteronomy 13:1-18",
+      "file": "lesson-14.md"
+    },
+    {
+      "number": 15,
+      "title": "Clean and Unclean Food",
+      "passage": "Deuteronomy 14:1-29",
+      "file": "lesson-15.md"
+    },
+    {
+      "number": 16,
+      "title": "The Year for Canceling Debts",
+      "passage": "Deuteronomy 15:1-23",
+      "file": "lesson-16.md"
+    },
+    {
+      "number": 17,
+      "title": "The Three Annual Festivals",
+      "passage": "Deuteronomy 16:1-22",
+      "file": "lesson-17.md"
+    },
+    {
+      "number": 18,
+      "title": "Law Courts and Justice",
+      "passage": "Deuteronomy 17:1-20",
+      "file": "lesson-18.md"
+    },
+    {
+      "number": 19,
+      "title": "Offerings for Priests and Prophets",
+      "passage": "Deuteronomy 18:1-22",
+      "file": "lesson-19.md"
+    },
+    {
+      "number": 20,
+      "title": "Cities of Refuge",
+      "passage": "Deuteronomy 19:1-21",
+      "file": "lesson-20.md"
+    },
+    {
+      "number": 21,
+      "title": "Laws Concerning Warfare",
+      "passage": "Deuteronomy 20:1-20",
+      "file": "lesson-21.md"
+    },
+    {
+      "number": 22,
+      "title": "Various Laws of Justice",
+      "passage": "Deuteronomy 21:1-23",
+      "file": "lesson-22.md"
+    },
+    {
+      "number": 23,
+      "title": "Laws About Neighbors and Holiness",
+      "passage": "Deuteronomy 22:1-30",
+      "file": "lesson-23.md"
+    },
+    {
+      "number": 24,
+      "title": "Exclusion from the Assembly",
+      "passage": "Deuteronomy 23:1-25",
+      "file": "lesson-24.md"
+    },
+    {
+      "number": 25,
+      "title": "Laws About Marriage and Compassion",
+      "passage": "Deuteronomy 24:1-22",
+      "file": "lesson-25.md"
+    },
+    {
+      "number": 26,
+      "title": "More Laws About Justice",
+      "passage": "Deuteronomy 25:1-19",
+      "file": "lesson-26.md"
+    },
+    {
+      "number": 27,
+      "title": "Firstfruits and Tithes",
+      "passage": "Deuteronomy 26:1-19",
+      "file": "lesson-27.md"
+    },
+    {
+      "number": 28,
+      "title": "The Altar on Mount Ebal",
+      "passage": "Deuteronomy 27:1-26",
+      "file": "lesson-28.md"
+    },
+    {
+      "number": 29,
+      "title": "Blessings for Obedience",
+      "passage": "Deuteronomy 28:1-14",
+      "file": "lesson-29.md"
+    },
+    {
+      "number": 30,
+      "title": "Curses for Disobedience",
+      "passage": "Deuteronomy 28:15-68",
+      "file": "lesson-30.md"
+    },
+    {
+      "number": 31,
+      "title": "Renewal of the Covenant",
+      "passage": "Deuteronomy 29:1-29",
+      "file": "lesson-31.md"
+    },
+    {
+      "number": 32,
+      "title": "Prosperity After Returning to the Lord",
+      "passage": "Deuteronomy 30:1-20",
+      "file": "lesson-32.md"
+    },
+    {
+      "number": 33,
+      "title": "Joshua to Succeed Moses",
+      "passage": "Deuteronomy 31:1-29",
+      "file": "lesson-33.md"
+    },
+    {
+      "number": 34,
+      "title": "The Song of Moses",
+      "passage": "Deuteronomy 31:30-32:47",
+      "file": "lesson-34.md"
+    },
+    {
+      "number": 35,
+      "title": "Moses Blesses the Tribes and His Death",
+      "passage": "Deuteronomy 32:48-34:12",
+      "file": "lesson-35.md"
     }
   ]
 }

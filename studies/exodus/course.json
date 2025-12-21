@@ -5,33 +5,243 @@
   "lessons": [
     {
       "number": 1,
-      "title": "Israel in Egypt",
-      "passage": "Exodus 1:1-22",
+      "title": "Introduction to Exodus",
+      "passage": "Overview",
       "file": "lesson-01.md"
     },
     {
       "number": 2,
-      "title": "The Birth and Call of Moses",
-      "passage": "Exodus 2:1-25",
+      "title": "Israel in Egypt",
+      "passage": "Exodus 1:1-22",
       "file": "lesson-02.md"
     },
     {
       "number": 3,
-      "title": "The Burning Bush",
-      "passage": "Exodus 3:1-22",
+      "title": "The Birth and Early Life of Moses",
+      "passage": "Exodus 2:1-25",
       "file": "lesson-03.md"
     },
     {
       "number": 4,
-      "title": "Moses Returns to Egypt",
-      "passage": "Exodus 4:1-31",
+      "title": "The Burning Bush",
+      "passage": "Exodus 3:1-22",
       "file": "lesson-04.md"
     },
     {
       "number": 5,
-      "title": "Confronting Pharaoh",
-      "passage": "Exodus 5:1-23",
+      "title": "Moses' Signs and Return to Egypt",
+      "passage": "Exodus 4:1-31",
       "file": "lesson-05.md"
+    },
+    {
+      "number": 6,
+      "title": "Confronting Pharaoh",
+      "passage": "Exodus 5:1-6:13",
+      "file": "lesson-06.md"
+    },
+    {
+      "number": 7,
+      "title": "God's Promise to Deliver Israel",
+      "passage": "Exodus 6:14-7:13",
+      "file": "lesson-07.md"
+    },
+    {
+      "number": 8,
+      "title": "First Plagues: Water to Blood and Frogs",
+      "passage": "Exodus 7:14-8:15",
+      "file": "lesson-08.md"
+    },
+    {
+      "number": 9,
+      "title": "Plagues of Gnats, Flies, and Livestock",
+      "passage": "Exodus 8:16-9:12",
+      "file": "lesson-09.md"
+    },
+    {
+      "number": 10,
+      "title": "Plagues of Hail, Locusts, and Darkness",
+      "passage": "Exodus 9:13-10:29",
+      "file": "lesson-10.md"
+    },
+    {
+      "number": 11,
+      "title": "The Final Plague Announced",
+      "passage": "Exodus 11:1-10",
+      "file": "lesson-11.md"
+    },
+    {
+      "number": 12,
+      "title": "The Passover Instituted",
+      "passage": "Exodus 12:1-28",
+      "file": "lesson-12.md"
+    },
+    {
+      "number": 13,
+      "title": "The Exodus from Egypt",
+      "passage": "Exodus 12:29-51",
+      "file": "lesson-13.md"
+    },
+    {
+      "number": 14,
+      "title": "Consecration of the Firstborn",
+      "passage": "Exodus 13:1-22",
+      "file": "lesson-14.md"
+    },
+    {
+      "number": 15,
+      "title": "Crossing the Red Sea",
+      "passage": "Exodus 14:1-31",
+      "file": "lesson-15.md"
+    },
+    {
+      "number": 16,
+      "title": "The Song of Moses",
+      "passage": "Exodus 15:1-21",
+      "file": "lesson-16.md"
+    },
+    {
+      "number": 17,
+      "title": "Bitter Waters Made Sweet",
+      "passage": "Exodus 15:22-27",
+      "file": "lesson-17.md"
+    },
+    {
+      "number": 18,
+      "title": "Manna and Quail from Heaven",
+      "passage": "Exodus 16:1-36",
+      "file": "lesson-18.md"
+    },
+    {
+      "number": 19,
+      "title": "Water from the Rock and Victory over Amalek",
+      "passage": "Exodus 17:1-16",
+      "file": "lesson-19.md"
+    },
+    {
+      "number": 20,
+      "title": "Jethro's Wisdom",
+      "passage": "Exodus 18:1-27",
+      "file": "lesson-20.md"
+    },
+    {
+      "number": 21,
+      "title": "At Mount Sinai",
+      "passage": "Exodus 19:1-25",
+      "file": "lesson-21.md"
+    },
+    {
+      "number": 22,
+      "title": "The Ten Commandments",
+      "passage": "Exodus 20:1-21",
+      "file": "lesson-22.md"
+    },
+    {
+      "number": 23,
+      "title": "Laws About Altars and Servants",
+      "passage": "Exodus 20:22-21:11",
+      "file": "lesson-23.md"
+    },
+    {
+      "number": 24,
+      "title": "Personal Injury Laws",
+      "passage": "Exodus 21:12-36",
+      "file": "lesson-24.md"
+    },
+    {
+      "number": 25,
+      "title": "Property and Restitution Laws",
+      "passage": "Exodus 22:1-31",
+      "file": "lesson-25.md"
+    },
+    {
+      "number": 26,
+      "title": "Justice and Mercy",
+      "passage": "Exodus 23:1-19",
+      "file": "lesson-26.md"
+    },
+    {
+      "number": 27,
+      "title": "God's Angel to Lead Israel",
+      "passage": "Exodus 23:20-33",
+      "file": "lesson-27.md"
+    },
+    {
+      "number": 28,
+      "title": "The Covenant Confirmed",
+      "passage": "Exodus 24:1-18",
+      "file": "lesson-28.md"
+    },
+    {
+      "number": 29,
+      "title": "Offerings for the Tabernacle",
+      "passage": "Exodus 25:1-9",
+      "file": "lesson-29.md"
+    },
+    {
+      "number": 30,
+      "title": "The Ark, Table, and Lampstand",
+      "passage": "Exodus 25:10-40",
+      "file": "lesson-30.md"
+    },
+    {
+      "number": 31,
+      "title": "The Tabernacle Structure",
+      "passage": "Exodus 26:1-37",
+      "file": "lesson-31.md"
+    },
+    {
+      "number": 32,
+      "title": "The Altar and Courtyard",
+      "passage": "Exodus 27:1-21",
+      "file": "lesson-32.md"
+    },
+    {
+      "number": 33,
+      "title": "The Priestly Garments",
+      "passage": "Exodus 28:1-43",
+      "file": "lesson-33.md"
+    },
+    {
+      "number": 34,
+      "title": "Consecration of the Priests",
+      "passage": "Exodus 29:1-46",
+      "file": "lesson-34.md"
+    },
+    {
+      "number": 35,
+      "title": "The Altar of Incense and Atonement Money",
+      "passage": "Exodus 30:1-38",
+      "file": "lesson-35.md"
+    },
+    {
+      "number": 36,
+      "title": "Bezalel and the Sabbath Command",
+      "passage": "Exodus 31:1-18",
+      "file": "lesson-36.md"
+    },
+    {
+      "number": 37,
+      "title": "The Golden Calf",
+      "passage": "Exodus 32:1-35",
+      "file": "lesson-37.md"
+    },
+    {
+      "number": 38,
+      "title": "Moses Intercedes for Israel",
+      "passage": "Exodus 33:1-23",
+      "file": "lesson-38.md"
+    },
+    {
+      "number": 39,
+      "title": "New Tablets and Covenant Renewed",
+      "passage": "Exodus 34:1-35",
+      "file": "lesson-39.md"
+    },
+    {
+      "number": 40,
+      "title": "Building the Tabernacle",
+      "passage": "Exodus 35:1-40:38",
+      "file": "lesson-40.md"
     }
   ]
 }

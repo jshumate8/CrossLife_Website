@@ -5,33 +5,165 @@
   "lessons": [
     {
       "number": 1,
-      "title": "The Burnt Offering",
-      "passage": "Leviticus 1:1-17",
+      "title": "Introduction to Leviticus",
+      "passage": "Overview",
       "file": "lesson-01.md"
     },
     {
       "number": 2,
-      "title": "The Grain Offering",
-      "passage": "Leviticus 2:1-16",
+      "title": "The Burnt Offering",
+      "passage": "Leviticus 1:1-17",
       "file": "lesson-02.md"
     },
     {
       "number": 3,
-      "title": "The Peace Offering",
-      "passage": "Leviticus 3:1-17",
+      "title": "The Grain Offering",
+      "passage": "Leviticus 2:1-16",
       "file": "lesson-03.md"
     },
     {
       "number": 4,
-      "title": "The Sin Offering",
-      "passage": "Leviticus 4:1-35",
+      "title": "The Peace Offering",
+      "passage": "Leviticus 3:1-17",
       "file": "lesson-04.md"
     },
     {
       "number": 5,
-      "title": "The Guilt Offering",
-      "passage": "Leviticus 5:1-19",
+      "title": "The Sin Offering",
+      "passage": "Leviticus 4:1-5:13",
       "file": "lesson-05.md"
+    },
+    {
+      "number": 6,
+      "title": "The Guilt Offering",
+      "passage": "Leviticus 5:14-6:7",
+      "file": "lesson-06.md"
+    },
+    {
+      "number": 7,
+      "title": "Instructions for the Priests",
+      "passage": "Leviticus 6:8-7:38",
+      "file": "lesson-07.md"
+    },
+    {
+      "number": 8,
+      "title": "Ordination of Aaron and His Sons",
+      "passage": "Leviticus 8:1-36",
+      "file": "lesson-08.md"
+    },
+    {
+      "number": 9,
+      "title": "The Priests Begin Their Ministry",
+      "passage": "Leviticus 9:1-24",
+      "file": "lesson-09.md"
+    },
+    {
+      "number": 10,
+      "title": "Nadab and Abihu Offer Strange Fire",
+      "passage": "Leviticus 10:1-20",
+      "file": "lesson-10.md"
+    },
+    {
+      "number": 11,
+      "title": "Clean and Unclean Animals",
+      "passage": "Leviticus 11:1-47",
+      "file": "lesson-11.md"
+    },
+    {
+      "number": 12,
+      "title": "Purification After Childbirth",
+      "passage": "Leviticus 12:1-8",
+      "file": "lesson-12.md"
+    },
+    {
+      "number": 13,
+      "title": "Laws About Skin Diseases",
+      "passage": "Leviticus 13:1-59",
+      "file": "lesson-13.md"
+    },
+    {
+      "number": 14,
+      "title": "Cleansing from Skin Diseases",
+      "passage": "Leviticus 14:1-57",
+      "file": "lesson-14.md"
+    },
+    {
+      "number": 15,
+      "title": "Laws About Bodily Discharges",
+      "passage": "Leviticus 15:1-33",
+      "file": "lesson-15.md"
+    },
+    {
+      "number": 16,
+      "title": "The Day of Atonement",
+      "passage": "Leviticus 16:1-34",
+      "file": "lesson-16.md"
+    },
+    {
+      "number": 17,
+      "title": "The Sanctity of Blood",
+      "passage": "Leviticus 17:1-16",
+      "file": "lesson-17.md"
+    },
+    {
+      "number": 18,
+      "title": "Unlawful Sexual Relations",
+      "passage": "Leviticus 18:1-30",
+      "file": "lesson-18.md"
+    },
+    {
+      "number": 19,
+      "title": "Laws of Holiness and Love",
+      "passage": "Leviticus 19:1-37",
+      "file": "lesson-19.md"
+    },
+    {
+      "number": 20,
+      "title": "Punishments for Sin",
+      "passage": "Leviticus 20:1-27",
+      "file": "lesson-20.md"
+    },
+    {
+      "number": 21,
+      "title": "Rules for Priests",
+      "passage": "Leviticus 21:1-24",
+      "file": "lesson-21.md"
+    },
+    {
+      "number": 22,
+      "title": "Acceptable Offerings",
+      "passage": "Leviticus 22:1-33",
+      "file": "lesson-22.md"
+    },
+    {
+      "number": 23,
+      "title": "The Appointed Festivals",
+      "passage": "Leviticus 23:1-44",
+      "file": "lesson-23.md"
+    },
+    {
+      "number": 24,
+      "title": "Oil, Bread, and Blasphemy",
+      "passage": "Leviticus 24:1-23",
+      "file": "lesson-24.md"
+    },
+    {
+      "number": 25,
+      "title": "Sabbath Years and Jubilee",
+      "passage": "Leviticus 25:1-55",
+      "file": "lesson-25.md"
+    },
+    {
+      "number": 26,
+      "title": "Blessings for Obedience",
+      "passage": "Leviticus 26:1-46",
+      "file": "lesson-26.md"
+    },
+    {
+      "number": 27,
+      "title": "Redeeming What Is the Lord's",
+      "passage": "Leviticus 27:1-34",
+      "file": "lesson-27.md"
     }
   ]
 }
