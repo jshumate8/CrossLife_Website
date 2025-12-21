@@ -49,6 +49,8 @@
                     
                     <form class="contact-form" id="donationUpdateForm" data-netlify="true" data-netlify-recaptcha="true" name="donation-update" action="/thank-you.html">
                         <input type="hidden" name="form-name" value="donation-update">
+                        <!-- Honeypot field for spam bots -->
+                        <input type="text" name="bot-field" style="display:none" tabindex="-1" autocomplete="off">
                         
                         <div class="form-group">
                             <label for="name">Full Name *</label>

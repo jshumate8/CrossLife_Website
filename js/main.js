@@ -143,6 +143,14 @@ function initializeContactForm() {
                 return;
             }
             
+            // Validate form inputs for security
+            const validationErrors = validateFormInput(formData);
+            if (validationErrors.length > 0) {
+                showFormResponse('Invalid input detected. Please check your entries.', 'error');
+                console.error('Form validation errors:', validationErrors);
+                return;
+            }
+            
             // Show loading state
             const submitButton = contactForm.querySelector('button[type="submit"]');
             const originalButtonText = submitButton.textContent;
@@ -212,6 +220,54 @@ function showFormResponse(message, type) {
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
+}
+
+// Sanitize user input to prevent XSS
+function sanitizeInput(input) {
+    const div = document.createElement('div');
+    div.textContent = input;
+    return div.innerHTML;
+}
+
+// Validate phone number format
+function isValidPhone(phone) {
+    // Remove all non-digit characters for validation
+    const digitsOnly = phone.replace(/\D/g, '');
+    // Allow 10-15 digits (accommodates international formats)
+    return digitsOnly.length >= 10 && digitsOnly.length <= 15;
+}
+
+// Validate form inputs to prevent injection attacks
+function validateFormInput(formData) {
+    const errors = [];
+    
+    // Check for suspicious patterns
+    const suspiciousPatterns = [
+        /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi,
+        /javascript:/gi,
+        /on\w+\s*=/gi,  // Event handlers like onclick=
+        /<iframe/gi,
+        /<object/gi,
+        /<embed/gi
+    ];
+    
+    for (let [key, value] of formData.entries()) {
+        if (typeof value === 'string') {
+            for (let pattern of suspiciousPatterns) {
+                if (pattern.test(value)) {
+                    errors.push(`Invalid content detected in ${key} field`);
+                    break;
+                }
+            }
+            
+            // Check for excessively long inputs
+            if (value.length > 5000) {
+                errors.push(`${key} field exceeds maximum length`);
+            }
+        }
+    }
+    
+    return errors;
 }
 
 // Smooth scroll for anchor links

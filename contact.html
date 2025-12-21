@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Contact CrossLife Ministry">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Contact Us - CrossLife Ministry</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -84,7 +86,11 @@
                     <div class="contact-form-container">
                         <h2>Send Us a Message</h2>
                         <form class="contact-form" id="contactForm" data-netlify="true" data-netlify-recaptcha="true" name="contact" action="/thank-you.html">
-                            <input type="hidden" name="form-name" value="contact">                            <div class="form-group">
+                            <input type="hidden" name="form-name" value="contact">
+                            <!-- Honeypot field for spam bots -->
+                            <input type="text" name="bot-field" style="display:none" tabindex="-1" autocomplete="off">
+                            
+                            <div class="form-group">
                                 <label for="name">Name *</label>
                                 <input type="text" id="name" name="name" required>
                             </div>

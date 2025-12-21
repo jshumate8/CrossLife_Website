@@ -181,9 +181,15 @@
 
     <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script>
-        // Redirect to home if not logged in
-        const user = netlifyIdentity.currentUser();
-        if (!user) {
+        // Authentication check - redirect if not logged in
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.location.href = '/index.html';
+                }
+            });
+        } else {
+            // If Identity widget fails to load, redirect
             window.location.href = '/index.html';
         }
     </script>
