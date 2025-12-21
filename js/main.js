@@ -344,7 +344,9 @@ function initNetlifyIdentity() {
     }
     
     // Update UI based on auth state
-    netlifyIdentity.on('init', updateAuthUI);
+    netlifyIdentity.on('init', function() {
+        updateAuthUI(netlifyIdentity.currentUser());
+    });
     netlifyIdentity.on('login', function(user) {
         netlifyIdentity.close();
         updateAuthUI(user);
