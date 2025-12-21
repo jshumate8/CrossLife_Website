@@ -15,9 +15,16 @@ class CrossLifeAuth {
         this.supabaseUrl = supabaseUrl;
         this.supabaseKey = supabaseAnonKey;
         
-        // Load Supabase library
+        // Wait for Supabase library to be available
+        let attempts = 0;
+        while (typeof window.supabase === 'undefined' && attempts < 50) {
+            await new Promise(resolve => setTimeout(resolve, 100));
+            attempts++;
+        }
+        
         if (typeof window.supabase === 'undefined') {
-            await this.loadSupabaseLibrary();
+            console.error('Supabase library failed to load');
+            return;
         }
         
         this.supabase = window.supabase.createClient(supabaseUrl, supabaseAnonKey);
