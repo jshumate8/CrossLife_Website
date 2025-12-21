@@ -32,6 +32,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Smooth scroll for anchor links
     initializeSmoothScroll();
+    
+    // Initialize Netlify Identity
+    initNetlifyIdentity();
 });
 
 // Filter functionality for studies and teachings pages
@@ -326,3 +329,62 @@ function setActiveNavLink() {
 
 // Call on page load
 setActiveNavLink();
+
+// Netlify Identity - centralized authentication handling
+function initNetlifyIdentity() {
+    if (typeof netlifyIdentity === 'undefined') return;
+    
+    const loginBtn = document.getElementById('loginBtn');
+    
+    // Login button handler
+    if (loginBtn) {
+        loginBtn.onclick = function() {
+            netlifyIdentity.currentUser() ? netlifyIdentity.logout() : netlifyIdentity.open();
+        };
+    }
+    
+    // Update UI based on auth state
+    netlifyIdentity.on('init', updateAuthUI);
+    netlifyIdentity.on('login', function(user) {
+        netlifyIdentity.close();
+        updateAuthUI(user);
+    });
+    netlifyIdentity.on('logout', function() {
+        location.reload();
+    });
+}
+
+function updateAuthUI(user) {
+    const loginBtn = document.getElementById('loginBtn');
+    const navStudies = document.getElementById('nav-studies');
+    const navTeachings = document.getElementById('nav-teachings');
+    const navResources = document.getElementById('nav-resources');
+    
+    if (user) {
+        if (loginBtn) loginBtn.textContent = 'Logout';
+        if (navStudies) navStudies.style.display = 'list-item';
+        if (navTeachings) navTeachings.style.display = 'list-item';
+        if (navResources) navResources.style.display = 'list-item';
+    } else {
+        if (loginBtn) loginBtn.textContent = 'Login';
+        if (navStudies) navStudies.style.display = 'none';
+        if (navTeachings) navTeachings.style.display = 'none';
+        if (navResources) navResources.style.display = 'none';
+    }
+}
+
+// Protected page check - call this from protected pages
+function requireAuth() {
+    if (typeof netlifyIdentity === 'undefined') {
+        window.location.href = '/index.html';
+        return;
+    }
+    
+    netlifyIdentity.on('init', function(user) {
+        if (!user) window.location.href = '/index.html';
+    });
+    
+    netlifyIdentity.on('logout', function() {
+        window.location.href = '/index.html';
+    });
+}
