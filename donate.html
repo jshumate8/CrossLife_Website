@@ -99,19 +99,26 @@
                                     transform: translateY(-2px);
                                     box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
                                 }
+                                /* Prevent page shift when modal opens */
+                                body.donorbox-popup-open {
+                                    overflow: hidden !important;
+                                    padding-right: 0 !important;
+                                }
                                 /* Center the Donorbox popup modal */
-                                #donorbox-popup-modal {
+                                div[id*="donorbox"] {
                                     position: fixed !important;
                                     top: 50% !important;
                                     left: 50% !important;
                                     transform: translate(-50%, -50%) !important;
                                     margin: 0 !important;
-                                    max-width: 90vw !important;
+                                    width: auto !important;
+                                    max-width: min(600px, 90vw) !important;
                                     max-height: 90vh !important;
                                     z-index: 999999 !important;
                                 }
-                                #donorbox-popup-modal iframe {
+                                div[id*="donorbox"] iframe {
                                     border-radius: 12px !important;
+                                    box-shadow: 0 8px 32px rgba(0,0,0,0.3) !important;
                                 }
                             </style>
                         </div>
