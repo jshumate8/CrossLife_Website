@@ -138,14 +138,12 @@ ul {
     align-items: center;
 }
 
-.nav-links li {
-    transition: none;
+#nav-logged-in {
+    display: none;
 }
 
-#nav-studies,
-#nav-teachings,
-#nav-resources {
-    transition: none !important;
+.nav-links li {
+    transition: none;
 }
 
 .nav-links a {
