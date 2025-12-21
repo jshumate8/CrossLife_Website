@@ -149,15 +149,12 @@
             netlifyIdentity.on('login', function(user) {
                 localStorage.setItem('crosslife-auth-state', 'logged-in');
                 document.documentElement.className = 'logged-in';
-                // Reload page after short delay to ensure auth state is persisted
-                window.location.href = window.location.href;
+                netlifyIdentity.close();
             });
             
             netlifyIdentity.on('logout', function() {
                 localStorage.setItem('crosslife-auth-state', 'logged-out');
                 document.documentElement.className = 'logged-out';
-                // Reload page to refresh UI
-                window.location.href = window.location.href;
             });
         }
     </script>

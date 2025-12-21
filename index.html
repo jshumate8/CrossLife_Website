@@ -176,12 +176,6 @@
     <script src="js/main.js"></script>
     <script>
         if (typeof netlifyIdentity !== 'undefined') {
-            // Check if we just reloaded from login/logout
-            var justReloaded = sessionStorage.getItem('auth-reload');
-            if (justReloaded) {
-                sessionStorage.removeItem('auth-reload');
-            }
-            
             netlifyIdentity.on('init', function(user) {
                 var state = user ? 'logged-in' : 'logged-out';
                 localStorage.setItem('crosslife-auth-state', state);
@@ -195,21 +189,14 @@
             });
             
             netlifyIdentity.on('login', function(user) {
-                if (!sessionStorage.getItem('auth-reload')) {
-                    localStorage.setItem('crosslife-auth-state', 'logged-in');
-                    document.documentElement.className = 'logged-in';
-                    sessionStorage.setItem('auth-reload', 'true');
-                    window.location.href = window.location.href;
-                }
+                localStorage.setItem('crosslife-auth-state', 'logged-in');
+                document.documentElement.className = 'logged-in';
+                netlifyIdentity.close();
             });
             
             netlifyIdentity.on('logout', function() {
-                if (!sessionStorage.getItem('auth-reload')) {
-                    localStorage.setItem('crosslife-auth-state', 'logged-out');
-                    document.documentElement.className = 'logged-out';
-                    sessionStorage.setItem('auth-reload', 'true');
-                    window.location.href = window.location.href;
-                }
+                localStorage.setItem('crosslife-auth-state', 'logged-out');
+                document.documentElement.className = 'logged-out';
             });
         }
     </script>
