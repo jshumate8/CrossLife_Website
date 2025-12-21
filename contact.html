@@ -184,36 +184,37 @@
 
     <script src="js/main.js"></script>
     <script>
-        // Setup login button functionality
-        function setupLoginButton(user) {
-            const loginBtn = document.getElementById('loginBtn');
-            const navStudies = document.getElementById('nav-studies');
-            const navTeachings = document.getElementById('nav-teachings');
-            const navResources = document.getElementById('nav-resources');
-            
-            if (!loginBtn) return;
-            
-            if (user) {
-                loginBtn.textContent = 'Logout';
-                loginBtn.onclick = function() {
-                    window.netlifyIdentity.logout();
-                };
-                if (navStudies) navStudies.style.display = 'list-item';
-                if (navTeachings) navTeachings.style.display = 'list-item';
-                if (navResources) navResources.style.display = 'list-item';
-            } else {
-                loginBtn.textContent = 'Login';
-                loginBtn.onclick = function() {
-                    window.netlifyIdentity.open();
-                };
-            }
-        }
-        
         // Initialize after Identity widget loads
         window.addEventListener('DOMContentLoaded', function() {
+            const loginBtn = document.getElementById('loginBtn');
+            
+            // Setup click handler
+            if (loginBtn) {
+                loginBtn.addEventListener('click', function() {
+                    if (window.netlifyIdentity) {
+                        const user = window.netlifyIdentity.currentUser();
+                        if (user) {
+                            window.netlifyIdentity.logout();
+                        } else {
+                            window.netlifyIdentity.open('login');
+                        }
+                    }
+                });
+            }
+            
+            // Update UI on init
             if (window.netlifyIdentity) {
                 window.netlifyIdentity.on("init", user => {
-                    setupLoginButton(user);
+                    const navStudies = document.getElementById('nav-studies');
+                    const navTeachings = document.getElementById('nav-teachings');
+                    const navResources = document.getElementById('nav-resources');
+                    
+                    if (user && loginBtn) {
+                        loginBtn.textContent = 'Logout';
+                        if (navStudies) navStudies.style.display = 'list-item';
+                        if (navTeachings) navTeachings.style.display = 'list-item';
+                        if (navResources) navResources.style.display = 'list-item';
+                    }
                 });
                 
                 window.netlifyIdentity.on('login', () => {
