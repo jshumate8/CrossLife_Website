@@ -319,9 +319,10 @@
                     <div class="course-tags">${tagsHTML}</div>
                 `;
 
-                // Render lessons
+                // Render lessons - check if each lesson file exists
+                const availableLessons = [1, 2, 3, 4, 5]; // Update this as you add more lessons
                 const lessonsHTML = courseData.lessons.map(lesson => {
-                    const isAvailable = courseInfo.status === 'in-progress' || courseInfo.status === 'completed';
+                    const isAvailable = availableLessons.includes(lesson.number);
                     return `
                         <div class="lesson-item">
                             <div class="lesson-number">${lesson.number}</div>
