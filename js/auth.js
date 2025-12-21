@@ -16,11 +16,11 @@ class CrossLifeAuth {
         this.supabaseKey = supabaseAnonKey;
         
         // Load Supabase library
-        if (typeof createClient === 'undefined') {
+        if (typeof window.supabase === 'undefined') {
             await this.loadSupabaseLibrary();
         }
         
-        this.supabase = createClient(supabaseUrl, supabaseAnonKey);
+        this.supabase = window.supabase.createClient(supabaseUrl, supabaseAnonKey);
         
         // Check for existing session
         const { data: { session } } = await this.supabase.auth.getSession();
@@ -51,8 +51,12 @@ class CrossLifeAuth {
     async loadSupabaseLibrary() {
         return new Promise((resolve, reject) => {
             const script = document.createElement('script');
-            script.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
-            script.onload = resolve;
+            script.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.0/dist/umd/supabase.min.js';
+            script.onload = () => {
+                // Make createClient available globally
+                window.createClient = window.supabase.createClient;
+                resolve();
+            };
             script.onerror = reject;
             document.head.appendChild(script);
         });
