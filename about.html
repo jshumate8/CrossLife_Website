@@ -196,14 +196,8 @@
             
             netlifyIdentity.on('login', function(user) {
                 localStorage.setItem('crosslife-auth-state', 'logged-in');
-                netlifyIdentity.close();
-                // Force immediate DOM update
                 document.documentElement.className = 'logged-in';
-                // Re-attach logout button handler after DOM updates
-                setTimeout(function() {
-                    var logoutBtn = document.getElementById('logoutBtn');
-                    if (logoutBtn) logoutBtn.onclick = function() { netlifyIdentity.logout(); };
-                }, 100);
+                netlifyIdentity.close();
             });
             
             netlifyIdentity.on('logout', function() {
