@@ -156,16 +156,25 @@
         window.addEventListener('DOMContentLoaded', function() {
             const loginBtn = document.getElementById('loginBtn');
             
+            // Debug: Check if Identity widget loaded
+            console.log('Identity widget loaded:', !!window.netlifyIdentity);
+            
             // Setup click handler
             if (loginBtn) {
                 loginBtn.addEventListener('click', function() {
+                    console.log('Login button clicked');
                     if (window.netlifyIdentity) {
                         const user = window.netlifyIdentity.currentUser();
+                        console.log('Current user:', user);
                         if (user) {
                             window.netlifyIdentity.logout();
                         } else {
+                            console.log('Opening login modal');
                             window.netlifyIdentity.open('login');
                         }
+                    } else {
+                        console.error('Netlify Identity not loaded!');
+                        alert('Authentication system not loaded. Please refresh the page.');
                     }
                 });
             }
@@ -173,6 +182,7 @@
             // Update UI on init
             if (window.netlifyIdentity) {
                 window.netlifyIdentity.on("init", user => {
+                    console.log('Identity initialized, user:', user);
                     const navStudies = document.getElementById('nav-studies');
                     const navTeachings = document.getElementById('nav-teachings');
                     const navResources = document.getElementById('nav-resources');
@@ -187,17 +197,25 @@
                 
                 // Close modal after signup
                 window.netlifyIdentity.on("signup", () => {
+                    console.log('Signup event');
                     window.netlifyIdentity.close();
                 });
                 
                 // Reload on login/logout
-                window.netlifyIdentity.on('login', () => {
+                window.netlifyIdentity.on('login', user => {
+                    console.log('Login successful:', user);
                     window.netlifyIdentity.close();
                     location.reload();
                 });
                 
                 window.netlifyIdentity.on('logout', () => {
+                    console.log('Logout event');
                     location.reload();
+                });
+                
+                window.netlifyIdentity.on('error', err => {
+                    console.error('Identity error:', err);
+                    alert('Authentication error: ' + err.message);
                 });
             }
         });
