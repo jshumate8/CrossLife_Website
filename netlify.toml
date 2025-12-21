@@ -1,15 +1,15 @@
 [[headers]]
-  for = "/studies.html"
+  for = "/study.html"
   [headers.values]
     Cache-Control = "no-store, no-cache, must-revalidate"
 
 [[headers]]
-  for = "/teachings.html"
+  for = "/watch.html"
   [headers.values]
     Cache-Control = "no-store, no-cache, must-revalidate"
 
 [[headers]]
-  for = "/resources.html"
+  for = "/evangelism.html"
   [headers.values]
     Cache-Control = "no-store, no-cache, must-revalidate"
 
