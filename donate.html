@@ -94,7 +94,7 @@
                         
                         <div class="donation-form-container" style="margin: 2rem 0; background: white; padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
                             <script type="module" src="https://donorbox.org/widgets.js" async></script>
-                            <dbox-widget campaign="crosslifedonations" type="donation_form" interval="1 M" amount="100" enable-auto-scroll="false"></dbox-widget>
+                            <dbox-widget campaign="crosslifedonations" type="donation_form" interval="1 M" amount="100"></dbox-widget>
                         </div>
 
                         <div class="recurring-info">
@@ -208,9 +208,31 @@
                 document.documentElement.className = 'logged-out';
             });
         }
+        
+        // Prevent Donorbox widget from auto-scrolling
+        var scrollPosition = 0;
+        window.addEventListener('load', function() {
+            scrollPosition = window.pageYOffset;
+            // Monitor for unwanted scroll changes
+            var scrollTimer;
+            window.addEventListener('scroll', function() {
+                clearTimeout(scrollTimer);
+                scrollTimer = setTimeout(function() {
+                    if (Math.abs(window.pageYOffset - scrollPosition) > 100 && window.pageYOffset > 0) {
+                        // Only prevent if scrolled significantly (likely by widget)
+                        window.scrollTo(0, scrollPosition);
+                    } else {
+                        scrollPosition = window.pageYOffset;
+                    }
+                }, 50);
+            });
+        });
     </script>
 </body>
 </html>
+
+
+
 
 
 
