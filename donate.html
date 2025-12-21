@@ -99,7 +99,7 @@
                                     transform: translateY(-2px);
                                     box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
                                 }
-                                /* Center the Donorbox popup modal */
+                                /* Center the Donorbox popup modal and ensure it's scrollable */
                                 div[id*="donorbox"] {
                                     position: fixed !important;
                                     top: 50% !important;
@@ -109,22 +109,13 @@
                                     width: auto !important;
                                     max-width: min(600px, 90vw) !important;
                                     max-height: 90vh !important;
+                                    overflow-y: auto !important;
                                     z-index: 999999 !important;
                                 }
                                 div[id*="donorbox"] iframe {
                                     border-radius: 12px !important;
                                     box-shadow: 0 8px 32px rgba(0,0,0,0.3) !important;
-                                }
-                                /* Overlay backdrop */
-                                div[id*="donorbox"]::before {
-                                    content: '';
-                                    position: fixed;
-                                    top: 0;
-                                    left: 0;
-                                    right: 0;
-                                    bottom: 0;
-                                    background: rgba(0,0,0,0.5);
-                                    z-index: -1;
+                                    display: block !important;
                                 }
                             </style>
                         </div>
