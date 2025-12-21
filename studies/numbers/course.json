@@ -1,0 +1,37 @@
+{
+  "courseId": "numbers",
+  "title": "Numbers: Wilderness Wanderings",
+  "book": "Numbers",
+  "lessons": [
+    {
+      "number": 1,
+      "title": "The Census at Sinai",
+      "passage": "Numbers 1:1-54",
+      "file": "lesson-01.md"
+    },
+    {
+      "number": 2,
+      "title": "The Arrangement of the Camp",
+      "passage": "Numbers 2:1-34",
+      "file": "lesson-02.md"
+    },
+    {
+      "number": 3,
+      "title": "The Levites Set Apart",
+      "passage": "Numbers 3:1-51",
+      "file": "lesson-03.md"
+    },
+    {
+      "number": 4,
+      "title": "Duties of the Levites",
+      "passage": "Numbers 4:1-49",
+      "file": "lesson-04.md"
+    },
+    {
+      "number": 5,
+      "title": "Purity in the Camp",
+      "passage": "Numbers 5:1-31",
+      "file": "lesson-05.md"
+    }
+  ]
+}

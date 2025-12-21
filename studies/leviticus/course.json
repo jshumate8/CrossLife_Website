@@ -1,0 +1,37 @@
+{
+  "courseId": "leviticus",
+  "title": "Leviticus: The Way of Holiness",
+  "book": "Leviticus",
+  "lessons": [
+    {
+      "number": 1,
+      "title": "The Burnt Offering",
+      "passage": "Leviticus 1:1-17",
+      "file": "lesson-01.md"
+    },
+    {
+      "number": 2,
+      "title": "The Grain Offering",
+      "passage": "Leviticus 2:1-16",
+      "file": "lesson-02.md"
+    },
+    {
+      "number": 3,
+      "title": "The Peace Offering",
+      "passage": "Leviticus 3:1-17",
+      "file": "lesson-03.md"
+    },
+    {
+      "number": 4,
+      "title": "The Sin Offering",
+      "passage": "Leviticus 4:1-35",
+      "file": "lesson-04.md"
+    },
+    {
+      "number": 5,
+      "title": "The Guilt Offering",
+      "passage": "Leviticus 5:1-19",
+      "file": "lesson-05.md"
+    }
+  ]
+}

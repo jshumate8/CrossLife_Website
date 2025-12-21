@@ -1,0 +1,37 @@
+{
+  "courseId": "deuteronomy",
+  "title": "Deuteronomy: Love and Obey",
+  "book": "Deuteronomy",
+  "lessons": [
+    {
+      "number": 1,
+      "title": "Moses' First Address Begins",
+      "passage": "Deuteronomy 1:1-46",
+      "file": "lesson-01.md"
+    },
+    {
+      "number": 2,
+      "title": "Wandering in the Wilderness",
+      "passage": "Deuteronomy 2:1-37",
+      "file": "lesson-02.md"
+    },
+    {
+      "number": 3,
+      "title": "Victory Over Og King of Bashan",
+      "passage": "Deuteronomy 3:1-29",
+      "file": "lesson-03.md"
+    },
+    {
+      "number": 4,
+      "title": "Obedience Commanded",
+      "passage": "Deuteronomy 4:1-49",
+      "file": "lesson-04.md"
+    },
+    {
+      "number": 5,
+      "title": "The Ten Commandments",
+      "passage": "Deuteronomy 5:1-33",
+      "file": "lesson-05.md"
+    }
+  ]
+}

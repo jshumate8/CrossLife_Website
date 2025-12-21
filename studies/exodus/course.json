@@ -1,0 +1,37 @@
+{
+  "courseId": "exodus",
+  "title": "Exodus: Redemption and Deliverance",
+  "book": "Exodus",
+  "lessons": [
+    {
+      "number": 1,
+      "title": "Israel in Egypt",
+      "passage": "Exodus 1:1-22",
+      "file": "lesson-01.md"
+    },
+    {
+      "number": 2,
+      "title": "The Birth and Call of Moses",
+      "passage": "Exodus 2:1-25",
+      "file": "lesson-02.md"
+    },
+    {
+      "number": 3,
+      "title": "The Burning Bush",
+      "passage": "Exodus 3:1-22",
+      "file": "lesson-03.md"
+    },
+    {
+      "number": 4,
+      "title": "Moses Returns to Egypt",
+      "passage": "Exodus 4:1-31",
+      "file": "lesson-04.md"
+    },
+    {
+      "number": 5,
+      "title": "Confronting Pharaoh",
+      "passage": "Exodus 5:1-23",
+      "file": "lesson-05.md"
+    }
+  ]
+}
