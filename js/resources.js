@@ -88,7 +88,7 @@ class ResourceManager {
         ).join('');
 
         return `
-            <div class="study-card" data-course-id="${course.id}">
+            <div class="study-card" data-course-id="${course.id}" style="cursor: pointer;" onclick="window.location.href='course.html?id=${course.id}'">
                 <div class="study-image">
                     <img src="${course.thumbnail}" alt="${course.title}" onerror="this.src='images/placeholder-study.jpg'">
                     ${statusBadge}
@@ -104,7 +104,7 @@ class ResourceManager {
                         <span>📖 ${course.lessons} Lessons</span>
                         <span>⏱️ ${course.weeks} Weeks</span>
                     </div>
-                    <a href="course.html?id=${course.id}" class="btn btn-secondary">
+                    <a href="course.html?id=${course.id}" class="btn btn-secondary" onclick="event.stopPropagation();">
                         ${course.status === 'in-progress' ? 'Start Study' : 'Learn More'}
                     </a>
                 </div>
