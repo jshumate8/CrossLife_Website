@@ -630,14 +630,16 @@
         <script src="js/main.js"></script>
     <script>
         if (typeof netlifyIdentity !== 'undefined') {
-            var loginBtn = document.getElementById('loginBtn');
-            var logoutBtn = document.getElementById('logoutBtn');
-            if (loginBtn) loginBtn.onclick = function() { netlifyIdentity.open(); };
-            if (logoutBtn) logoutBtn.onclick = function() { netlifyIdentity.logout(); };
             netlifyIdentity.on('init', function(user) {
                 var state = user ? 'logged-in' : 'logged-out';
                 localStorage.setItem('crosslife-auth-state', state);
                 document.documentElement.className = state;
+                
+                // Set up button handlers after nav is displayed
+                var loginBtn = document.getElementById('loginBtn');
+                var logoutBtn = document.getElementById('logoutBtn');
+                if (loginBtn) loginBtn.onclick = function() { netlifyIdentity.open(); };
+                if (logoutBtn) logoutBtn.onclick = function() { netlifyIdentity.logout(); };
             });
             netlifyIdentity.on('login', function() {
                 localStorage.setItem('crosslife-auth-state', 'logged-in');
