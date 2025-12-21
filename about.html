@@ -193,11 +193,15 @@
                 if (loginBtn) loginBtn.onclick = function() { netlifyIdentity.open(); };
                 if (logoutBtn) logoutBtn.onclick = function() { netlifyIdentity.logout(); };
             });
+            
             netlifyIdentity.on('login', function(user) {
                 localStorage.setItem('crosslife-auth-state', 'logged-in');
                 document.documentElement.className = 'logged-in';
+                netlifyIdentity.close();
                 // Reload page after short delay to ensure auth state is persisted
-                window.location.href = window.location.href;
+                setTimeout(function() {
+                    window.location.href = window.location.href;
+                }, 100);
             });
             
             netlifyIdentity.on('logout', function() {
