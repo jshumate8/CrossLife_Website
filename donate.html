@@ -93,8 +93,7 @@
                         <p>Your generous donation enables CrossLife Ministry to continue providing free biblical teaching and study resources to believers around the world.</p>
                         
                         <div class="donation-form-container" style="margin: 2rem 0; background: white; padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--box-shadow);">
-                            <script type="module" src="https://donorbox.org/widgets.js" async></script>
-                            <dbox-widget campaign="crosslifedonations" type="donation_form" interval="1 M" amount="100"></dbox-widget>
+                            <script src="https://donorbox.org/install-popup-button.js" defer></script><a class="dbox-donation-button" href="https://donorbox.org/embed/crosslifedonations?default_interval=m&amount=100" style="background: var(--primary-color); color: #fff; text-decoration: none; font-family: Verdana,sans-serif; display: inline-block; font-size: 16px; padding: 15px 38px; border-radius: 8px;">Donate Now</a>
                         </div>
 
                         <div class="recurring-info">
@@ -209,23 +208,6 @@
             });
         }
         
-        // Prevent automatic scrolling when Donorbox widget loads
-        // Store initial scroll position and restore it if changed automatically
-        (function() {
-            var initialScroll = window.pageYOffset || document.documentElement.scrollTop;
-            var hasUserScrolled = false;
-            
-            window.addEventListener('scroll', function() {
-                hasUserScrolled = true;
-            }, { once: true, passive: true });
-            
-            // After widget loads, if user hasn't scrolled, keep position at top
-            setTimeout(function() {
-                if (!hasUserScrolled && window.pageYOffset !== initialScroll) {
-                    window.scrollTo(0, initialScroll);
-                }
-            }, 6000); // Wait 6 seconds for widget to fully load
-        })();
     </script>
 </body>
 </html>
