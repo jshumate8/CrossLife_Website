@@ -145,24 +145,7 @@
 
     <script src="js/main.js"></script>
     <script>
-        // Wait for Netlify Identity to load
-        function initIdentity() {
-            if (window.netlifyIdentity) {
-                window.netlifyIdentity.on("init", user => {
-                    setupLoginButton(user);
-                });
-                
-                window.netlifyIdentity.on('login', () => {
-                    window.netlifyIdentity.close();
-                    location.reload();
-                });
-                
-                window.netlifyIdentity.on('logout', () => {
-                    location.reload();
-                });
-            }
-        }
-        
+        // Setup login button functionality
         function setupLoginButton(user) {
             const loginBtn = document.getElementById('loginBtn');
             const navStudies = document.getElementById('nav-studies');
@@ -187,11 +170,23 @@
             }
         }
         
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initIdentity);
-        } else {
-            initIdentity();
-        }
+        // Initialize after Identity widget loads
+        window.addEventListener('DOMContentLoaded', function() {
+            if (window.netlifyIdentity) {
+                window.netlifyIdentity.on("init", user => {
+                    setupLoginButton(user);
+                });
+                
+                window.netlifyIdentity.on('login', () => {
+                    window.netlifyIdentity.close();
+                    location.reload();
+                });
+                
+                window.netlifyIdentity.on('logout', () => {
+                    location.reload();
+                });
+            }
+        });
     </script>
 </body>
 </html>
