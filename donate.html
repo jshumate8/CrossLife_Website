@@ -99,23 +99,31 @@
                                     transform: translateY(-2px);
                                     box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
                                 }
-                                /* Center the Donorbox popup modal and ensure it's scrollable */
-                                div[id*="donorbox"] {
+                                /* Target all possible Donorbox modal containers */
+                                div[id*="donorbox"],
+                                div[class*="donorbox"],
+                                .donorbox-popup-modal,
+                                #donorbox-popup-modal {
                                     position: fixed !important;
                                     top: 50% !important;
                                     left: 50% !important;
                                     transform: translate(-50%, -50%) !important;
                                     margin: 0 !important;
-                                    width: auto !important;
-                                    max-width: min(600px, 90vw) !important;
+                                    width: 470px !important;
+                                    max-width: 90vw !important;
                                     max-height: 90vh !important;
                                     overflow-y: auto !important;
                                     z-index: 999999 !important;
+                                    border-radius: 12px !important;
                                 }
-                                div[id*="donorbox"] iframe {
+                                /* Style the iframe inside */
+                                div[id*="donorbox"] iframe,
+                                div[class*="donorbox"] iframe {
                                     border-radius: 12px !important;
                                     box-shadow: 0 8px 32px rgba(0,0,0,0.3) !important;
                                     display: block !important;
+                                    width: 100% !important;
+                                    border: none !important;
                                 }
                             </style>
                         </div>
