@@ -182,6 +182,12 @@
     <script src="js/main.js"></script>
     <script>
         if (typeof netlifyIdentity !== 'undefined') {
+            // Check if we just reloaded from login/logout
+            var justReloaded = sessionStorage.getItem('auth-reload');
+            if (justReloaded) {
+                sessionStorage.removeItem('auth-reload');
+            }
+            
             netlifyIdentity.on('init', function(user) {
                 var state = user ? 'logged-in' : 'logged-out';
                 localStorage.setItem('crosslife-auth-state', state);
@@ -195,20 +201,24 @@
             });
             
             netlifyIdentity.on('login', function(user) {
-                localStorage.setItem('crosslife-auth-state', 'logged-in');
-                document.documentElement.className = 'logged-in';
-                netlifyIdentity.close();
-                // Reload page after short delay to ensure auth state is persisted
-                setTimeout(function() {
-                    window.location.href = window.location.href;
-                }, 100);
+                if (!sessionStorage.getItem('auth-reload')) {
+                    localStorage.setItem('crosslife-auth-state', 'logged-in');
+                    document.documentElement.className = 'logged-in';
+                    netlifyIdentity.close();
+                    sessionStorage.setItem('auth-reload', 'true');
+                    setTimeout(function() {
+                        window.location.href = window.location.href;
+                    }, 100);
+                }
             });
             
             netlifyIdentity.on('logout', function() {
-                localStorage.setItem('crosslife-auth-state', 'logged-out');
-                document.documentElement.className = 'logged-out';
-                // Reload page to refresh UI
-                window.location.href = window.location.href;
+                if (!sessionStorage.getItem('auth-reload')) {
+                    localStorage.setItem('crosslife-auth-state', 'logged-out');
+                    document.documentElement.className = 'logged-out';
+                    sessionStorage.setItem('auth-reload', 'true');
+                    window.location.href = window.location.href;
+                }
             });
         }
     </script>
