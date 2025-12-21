@@ -6,6 +6,33 @@
     <meta name="description" content="CrossLife - Christian ministry for teaching and Bible study materials">
     <title>CrossLife Ministry - Home</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+        // Check auth state before page renders
+        if (netlifyIdentity) {
+            netlifyIdentity.on('init', function(user) {
+                if (user) {
+                    document.documentElement.classList.add('logged-in');
+                } else {
+                    document.documentElement.classList.add('logged-out');
+                }
+            });
+        }
+    </script>
+    <style>
+        /* Hide both navs until we know auth state */
+        #nav-logged-out,
+        #nav-logged-in {
+            display: none !important;
+        }
+        /* Show correct nav based on auth state */
+        .logged-out #nav-logged-out {
+            display: flex !important;
+        }
+        .logged-in #nav-logged-in {
+            display: flex !important;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -153,7 +180,6 @@
         </div>
     </footer>
 
-    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

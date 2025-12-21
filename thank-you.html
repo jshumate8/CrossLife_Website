@@ -6,6 +6,23 @@
     <meta name="description" content="Thank you for contacting CrossLife Ministry">
     <title>Thank You - CrossLife Ministry</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+        if (netlifyIdentity) {
+            netlifyIdentity.on('init', function(user) {
+                if (user) {
+                    document.documentElement.classList.add('logged-in');
+                } else {
+                    document.documentElement.classList.add('logged-out');
+                }
+            });
+        }
+    </script>
+    <style>
+        #nav-logged-out, #nav-logged-in { display: none !important; }
+        .logged-out #nav-logged-out { display: flex !important; }
+        .logged-in #nav-logged-in { display: flex !important; }
+    </style>
 </head>
 <body>
     <header>
@@ -120,7 +137,6 @@
         </div>
     </footer>
 
-    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
