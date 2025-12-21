@@ -1,4 +1,4 @@
-# Lesson 2: The Six Days of Creation
+# Lesson 3: The Six Days of Creation
 
 **Passage:** Genesis 1:3-31  
 **Memory Verse:** *"God saw all that he had made, and it was very good."* - Genesis 1:31a

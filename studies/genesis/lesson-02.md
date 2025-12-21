@@ -1,4 +1,4 @@
-# Lesson 1: In the Beginning God
+# Lesson 2: In the Beginning God
 
 **Passage:** Genesis 1:1-2  
 **Memory Verse:** *"In the beginning God created the heavens and the earth."* - Genesis 1:1
