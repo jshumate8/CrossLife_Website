@@ -338,11 +338,19 @@ function initNetlifyIdentity() {
     if (typeof netlifyIdentity === 'undefined') return;
     
     const loginBtn = document.getElementById('loginBtn');
+    const logoutBtn = document.getElementById('logoutBtn');
     
     // Login button handler
     if (loginBtn) {
         loginBtn.onclick = function() {
-            netlifyIdentity.currentUser() ? netlifyIdentity.logout() : netlifyIdentity.open();
+            netlifyIdentity.open();
+        };
+    }
+    
+    // Logout button handler
+    if (logoutBtn) {
+        logoutBtn.onclick = function() {
+            netlifyIdentity.logout();
         };
     }
     
@@ -363,21 +371,15 @@ function initNetlifyIdentity() {
 }
 
 function updateAuthUI(user) {
-    const loginBtn = document.getElementById('loginBtn');
-    const navStudies = document.getElementById('nav-studies');
-    const navTeachings = document.getElementById('nav-teachings');
-    const navResources = document.getElementById('nav-resources');
+    const navLoggedOut = document.getElementById('nav-logged-out');
+    const navLoggedIn = document.getElementById('nav-logged-in');
     
     if (user) {
-        if (loginBtn) loginBtn.textContent = 'Logout';
-        if (navStudies) navStudies.style.display = 'list-item';
-        if (navTeachings) navTeachings.style.display = 'list-item';
-        if (navResources) navResources.style.display = 'list-item';
+        if (navLoggedOut) navLoggedOut.style.display = 'none';
+        if (navLoggedIn) navLoggedIn.style.display = 'flex';
     } else {
-        if (loginBtn) loginBtn.textContent = 'Login';
-        if (navStudies) navStudies.style.display = 'none';
-        if (navTeachings) navTeachings.style.display = 'none';
-        if (navResources) navResources.style.display = 'none';
+        if (navLoggedOut) navLoggedOut.style.display = 'flex';
+        if (navLoggedIn) navLoggedIn.style.display = 'none';
     }
 }
 

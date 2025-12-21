@@ -14,13 +14,18 @@
                 <div class="logo">
                     <a href="index.html"><h1>CrossLife</h1></a>
                 </div>
-                <ul class="nav-links">
-                    <li id="nav-studies" style="display: none;"><a href="study.html">Study</a></li>
-                    <li id="nav-teachings" style="display: none;"><a href="watch.html" class="active">Watch</a></li>
-                    <li id="nav-resources" style="display: none;"><a href="evangelism.html">Evangelism</a></li>
+                <ul class="nav-links" id="nav-logged-out">
                     <li><a href="about.html">About</a></li>
                     <li><a href="donate.html" class="donate-btn">Donate</a></li>
                     <li><button type="button" id="loginBtn" class="login-btn">Login</button></li>
+                </ul>
+                <ul class="nav-links" id="nav-logged-in" style="display: none;">
+                    <li><a href="study.html">Study</a></li>
+                    <li><a href="watch.html" class="active">Watch</a></li>
+                    <li><a href="evangelism.html">Evangelism</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="donate.html" class="donate-btn">Donate</a></li>
+                    <li><button type="button" id="logoutBtn" class="login-btn">Logout</button></li>
                 </ul>
                 <div class="mobile-menu-toggle">
                     <span></span>
