@@ -9,7 +9,7 @@
     Cache-Control = "no-store, no-cache, must-revalidate"
 
 [[headers]]
-  for = "/evangelism.html"
+  for = "/share.html"
   [headers.values]
     Cache-Control = "no-store, no-cache, must-revalidate"
 
