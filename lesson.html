@@ -6,7 +6,8 @@
     <meta name="description" content="Bible study lesson from CrossLife Ministry">
     <title>Lesson - CrossLife Ministry</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
         (function() {
@@ -361,30 +362,31 @@
         }
 
         // Auth handling
-        if (typeof netlifyIdentity !== 'undefined') {
-            netlifyIdentity.on('logout', function() {
+        if (typeof crosslifeAuth !== 'undefined') {
+            crosslifeAuth.on('logout', function() {
                 localStorage.setItem('crosslife-auth-state', 'logged-out');
                 document.documentElement.className = 'logged-out';
             });
             
-            netlifyIdentity.on('init', function(user) {
+            crosslifeAuth.on('init', function(user) {
                 var state = user ? 'logged-in' : 'logged-out';
                 localStorage.setItem('crosslife-auth-state', state);
                 document.documentElement.className = state;
                 
                 var loginBtn = document.getElementById('loginBtn');
                 var logoutBtn = document.getElementById('logoutBtn');
-                if (loginBtn) loginBtn.onclick = function() { netlifyIdentity.open(); };
-                if (logoutBtn) logoutBtn.onclick = function() { netlifyIdentity.logout(); };
+                if (loginBtn) loginBtn.onclick = function() { crosslifeAuth.open(); };
+                if (logoutBtn) logoutBtn.onclick = function() { crosslifeAuth.logout(); };
             });
             
-            netlifyIdentity.on('login', function() {
+            crosslifeAuth.on('login', function() {
                 localStorage.setItem('crosslife-auth-state', 'logged-in');
                 document.documentElement.className = 'logged-in';
-                netlifyIdentity.close();
+                crosslifeAuth.close();
             });
         }
     </script>
     <script>requireAuth();</script>
 </body>
 </html>
+

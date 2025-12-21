@@ -6,7 +6,8 @@
     <meta name="description" content="Video and audio teachings from CrossLife Ministry">
     <title>Watch - CrossLife Ministry</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
         <script>
         (function() {
             var authState = localStorage.getItem('crosslife-auth-state') || 'logged-out';
@@ -214,14 +215,14 @@
 
         <script src="js/main.js"></script>
     <script>
-        if (typeof netlifyIdentity !== 'undefined') {
+        if (typeof crosslifeAuth !== 'undefined') {
             // Handle logout FIRST to update localStorage before requireAuth redirects
-            netlifyIdentity.on('logout', function() {
+            crosslifeAuth.on('logout', function() {
                 localStorage.setItem('crosslife-auth-state', 'logged-out');
                 document.documentElement.className = 'logged-out';
             });
             
-            netlifyIdentity.on('init', function(user) {
+            crosslifeAuth.on('init', function(user) {
                 var state = user ? 'logged-in' : 'logged-out';
                 localStorage.setItem('crosslife-auth-state', state);
                 document.documentElement.className = state;
@@ -229,20 +230,21 @@
                 // Set up button handlers after nav is displayed
                 var loginBtn = document.getElementById('loginBtn');
                 var logoutBtn = document.getElementById('logoutBtn');
-                if (loginBtn) loginBtn.onclick = function() { netlifyIdentity.open(); };
-                if (logoutBtn) logoutBtn.onclick = function() { netlifyIdentity.logout(); };
+                if (loginBtn) loginBtn.onclick = function() { crosslifeAuth.open(); };
+                if (logoutBtn) logoutBtn.onclick = function() { crosslifeAuth.logout(); };
             });
             
-            netlifyIdentity.on('login', function() {
+            crosslifeAuth.on('login', function() {
                 localStorage.setItem('crosslife-auth-state', 'logged-in');
                 document.documentElement.className = 'logged-in';
-                netlifyIdentity.close();
+                crosslifeAuth.close();
             });
         }
     </script>
     <script>requireAuth();</script>
 </body>
 </html>
+
 
 
 

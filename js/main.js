@@ -329,18 +329,19 @@ setActiveNavLink();
 
 // Protected page check - call this from protected pages
 function requireAuth() {
-    if (typeof netlifyIdentity === 'undefined') {
+    if (typeof crosslifeAuth === 'undefined') {
         window.location.href = '/index.html';
         return;
     }
     
-    netlifyIdentity.on('init', function(user) {
+    crosslifeAuth.on('init', function(user) {
         if (!user) {
             window.location.href = '/index.html';
         }
     });
     
-    netlifyIdentity.on('logout', function() {
+    crosslifeAuth.on('logout', function() {
         window.location.href = '/index.html';
     });
 }
+

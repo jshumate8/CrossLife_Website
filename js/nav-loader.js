@@ -13,28 +13,28 @@
                 
                 if (loginBtn) {
                     loginBtn.onclick = function() {
-                        netlifyIdentity.open();
+                        crosslifeAuth.open();
                     };
                 }
                 
                 if (logoutBtn) {
                     logoutBtn.onclick = function() {
-                        netlifyIdentity.logout();
+                        crosslifeAuth.logout();
                     };
                 }
                 
                 // Set initial auth state
-                if (typeof netlifyIdentity !== 'undefined') {
-                    netlifyIdentity.on('init', function(user) {
+                if (typeof crosslifeAuth !== 'undefined') {
+                    crosslifeAuth.on('init', function(user) {
                         updateAuthUI(user);
                     });
                     
-                    netlifyIdentity.on('login', function(user) {
-                        netlifyIdentity.close();
+                    crosslifeAuth.on('login', function(user) {
+                        crosslifeAuth.close();
                         updateAuthUI(user);
                     });
                     
-                    netlifyIdentity.on('logout', function() {
+                    crosslifeAuth.on('logout', function() {
                         updateAuthUI(null);
                     });
                 }
@@ -51,3 +51,4 @@ function updateAuthUI(user) {
         document.documentElement.classList.add('logged-out');
     }
 }
+
