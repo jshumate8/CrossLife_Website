@@ -1,0 +1,37 @@
+{
+  "courseId": "romans",
+  "title": "Romans: The Gospel of God",
+  "book": "Romans",
+  "lessons": [
+    {
+      "number": 1,
+      "title": "Introduction and Theme",
+      "passage": "Romans 1:1-17",
+      "file": "lesson-01.md"
+    },
+    {
+      "number": 2,
+      "title": "The Wrath of God Revealed",
+      "passage": "Romans 1:18-32",
+      "file": "lesson-02.md"
+    },
+    {
+      "number": 3,
+      "title": "God's Righteous Judgment",
+      "passage": "Romans 2:1-29",
+      "file": "lesson-03.md"
+    },
+    {
+      "number": 4,
+      "title": "All Have Sinned",
+      "passage": "Romans 3:1-20",
+      "file": "lesson-04.md"
+    },
+    {
+      "number": 5,
+      "title": "Justification by Faith",
+      "passage": "Romans 3:21-31",
+      "file": "lesson-05.md"
+    }
+  ]
+}

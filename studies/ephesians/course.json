@@ -1,0 +1,43 @@
+{
+  "courseId": "ephesians",
+  "title": "Ephesians: Our Identity in Christ",
+  "book": "Ephesians",
+  "lessons": [
+    {
+      "number": 1,
+      "title": "Blessed in Christ",
+      "passage": "Ephesians 1:1-23",
+      "file": "lesson-01.md"
+    },
+    {
+      "number": 2,
+      "title": "Saved by Grace",
+      "passage": "Ephesians 2:1-22",
+      "file": "lesson-02.md"
+    },
+    {
+      "number": 3,
+      "title": "The Mystery Revealed",
+      "passage": "Ephesians 3:1-21",
+      "file": "lesson-03.md"
+    },
+    {
+      "number": 4,
+      "title": "Walk in Unity and Love",
+      "passage": "Ephesians 4:1-5:21",
+      "file": "lesson-04.md"
+    },
+    {
+      "number": 5,
+      "title": "Christian Household and Relationships",
+      "passage": "Ephesians 5:22-6:9",
+      "file": "lesson-05.md"
+    },
+    {
+      "number": 6,
+      "title": "The Armor of God",
+      "passage": "Ephesians 6:10-24",
+      "file": "lesson-06.md"
+    }
+  ]
+}

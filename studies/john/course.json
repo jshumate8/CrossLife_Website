@@ -1,0 +1,37 @@
+{
+  "courseId": "john",
+  "title": "Gospel of John: Believe and Live",
+  "book": "John",
+  "lessons": [
+    {
+      "number": 1,
+      "title": "The Word Became Flesh",
+      "passage": "John 1:1-18",
+      "file": "lesson-01.md"
+    },
+    {
+      "number": 2,
+      "title": "The Testimony of John the Baptist",
+      "passage": "John 1:19-34",
+      "file": "lesson-02.md"
+    },
+    {
+      "number": 3,
+      "title": "The First Disciples",
+      "passage": "John 1:35-51",
+      "file": "lesson-03.md"
+    },
+    {
+      "number": 4,
+      "title": "The Wedding at Cana - First Sign",
+      "passage": "John 2:1-12",
+      "file": "lesson-04.md"
+    },
+    {
+      "number": 5,
+      "title": "Cleansing the Temple",
+      "passage": "John 2:13-25",
+      "file": "lesson-05.md"
+    }
+  ]
+}

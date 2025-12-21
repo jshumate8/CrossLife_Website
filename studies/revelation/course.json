@@ -1,0 +1,37 @@
+{
+  "courseId": "revelation",
+  "title": "Revelation: The Unveiling of Jesus Christ",
+  "book": "Revelation",
+  "lessons": [
+    {
+      "number": 1,
+      "title": "The Revelation and Vision of Christ",
+      "passage": "Revelation 1:1-20",
+      "file": "lesson-01.md"
+    },
+    {
+      "number": 2,
+      "title": "Letters to Ephesus and Smyrna",
+      "passage": "Revelation 2:1-11",
+      "file": "lesson-02.md"
+    },
+    {
+      "number": 3,
+      "title": "Letters to Pergamum and Thyatira",
+      "passage": "Revelation 2:12-29",
+      "file": "lesson-03.md"
+    },
+    {
+      "number": 4,
+      "title": "Letters to Sardis, Philadelphia, and Laodicea",
+      "passage": "Revelation 3:1-22",
+      "file": "lesson-04.md"
+    },
+    {
+      "number": 5,
+      "title": "The Throne Room of Heaven",
+      "passage": "Revelation 4:1-5:14",
+      "file": "lesson-05.md"
+    }
+  ]
+}
