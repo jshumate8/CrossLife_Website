@@ -1,5 +1,28 @@
 // CrossLife Ministry Website - Main JavaScript
 
+// Immediately check auth state to prevent nav flicker
+(function() {
+    if (typeof netlifyIdentity !== 'undefined') {
+        const checkAuth = function() {
+            const user = netlifyIdentity.currentUser();
+            const navLoggedOut = document.getElementById('nav-logged-out');
+            const navLoggedIn = document.getElementById('nav-logged-in');
+            
+            if (user) {
+                if (navLoggedOut) navLoggedOut.style.display = 'none';
+                if (navLoggedIn) navLoggedIn.style.display = 'flex';
+            }
+        };
+        
+        // Try immediately
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', checkAuth);
+        } else {
+            checkAuth();
+        }
+    }
+})();
+
 // Mobile Menu Toggle
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
