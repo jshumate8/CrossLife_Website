@@ -381,7 +381,11 @@ function requireAuth() {
     }
     
     netlifyIdentity.on('init', function(user) {
-        if (!user) window.location.href = '/index.html';
+        if (!user) {
+            window.location.href = '/index.html';
+        } else {
+            updateAuthUI(user);
+        }
     });
     
     netlifyIdentity.on('logout', function() {
