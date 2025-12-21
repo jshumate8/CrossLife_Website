@@ -32,12 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Smooth scroll for anchor links
     initializeSmoothScroll();
-    
-    // Initialize Netlify Identity - must happen after DOM is ready
-    if (typeof netlifyIdentity !== 'undefined') {
-        netlifyIdentity.init();
-    }
-    initNetlifyIdentity();
 });
 
 // Filter functionality for studies and teachings pages
@@ -332,53 +326,6 @@ function setActiveNavLink() {
 
 // Call on page load
 setActiveNavLink();
-
-// Netlify Identity - centralized authentication handling
-function initNetlifyIdentity() {
-    if (typeof netlifyIdentity === 'undefined') return;
-    
-    const loginBtn = document.getElementById('loginBtn');
-    const logoutBtn = document.getElementById('logoutBtn');
-    
-    // Login button handler
-    if (loginBtn) {
-        loginBtn.onclick = function() {
-            netlifyIdentity.open();
-        };
-    }
-    
-    // Logout button handler
-    if (logoutBtn) {
-        logoutBtn.onclick = function() {
-            netlifyIdentity.logout();
-        };
-    }
-    
-    // Update UI based on auth state - this fires after init
-    netlifyIdentity.on('init', function() {
-        const user = netlifyIdentity.currentUser();
-        updateAuthUI(user);
-    });
-    
-    netlifyIdentity.on('login', function(user) {
-        netlifyIdentity.close();
-        updateAuthUI(user);
-    });
-    
-    netlifyIdentity.on('logout', function() {
-        updateAuthUI(null);
-    });
-}
-
-function updateAuthUI(user) {
-    if (user) {
-        document.documentElement.classList.remove('logged-out');
-        document.documentElement.classList.add('logged-in');
-    } else {
-        document.documentElement.classList.remove('logged-in');
-        document.documentElement.classList.add('logged-out');
-    }
-}
 
 // Protected page check - call this from protected pages
 function requireAuth() {
