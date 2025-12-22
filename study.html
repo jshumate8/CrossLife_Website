@@ -658,9 +658,16 @@
             crosslifeAuth.on('logout', function() {
                 localStorage.setItem('crosslife-auth-state', 'logged-out');
                 document.documentElement.className = 'logged-out';
+                window.location.href = '/index.html';
             });
             
             crosslifeAuth.on('init', function(user) {
+                if (!user) {
+                    // User not logged in, redirect to home
+                    window.location.href = '/index.html';
+                    return;
+                }
+                
                 var state = user ? 'logged-in' : 'logged-out';
                 localStorage.setItem('crosslife-auth-state', state);
                 document.documentElement.className = state;
@@ -677,9 +684,11 @@
                 document.documentElement.className = 'logged-in';
                 crosslifeAuth.close();
             });
+        } else {
+            // Auth not available, redirect to home
+            window.location.href = '/index.html';
         }
     </script>
-    <script>requireAuth();</script>
 </body>
 </html>
 
