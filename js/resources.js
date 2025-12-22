@@ -90,7 +90,7 @@ class ResourceManager {
         return `
             <div class="study-card" data-course-id="${course.id}" style="cursor: pointer;" onclick="window.location.href='course.html?id=${course.id}'">
                 <div class="study-image">
-                    <img src="${course.thumbnail}" alt="${course.title}" onerror="this.src='images/placeholder-study.jpg'">
+                    <img src="${course.thumbnail}" alt="${course.title}" onerror="this.onerror=null; this.src='images/placeholder-study.jpg';">
                     ${statusBadge}
                 </div>
                 <div class="study-content">
