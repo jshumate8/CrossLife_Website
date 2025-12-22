@@ -641,26 +641,29 @@
         <script src="js/main.js"></script>
     <script src="js/resources.js"></script>
     <script>
-        // Initialize resource manager and load studies
-        (async function() {
-            const resourceManager = new ResourceManager();
-            await resourceManager.loadResources();
-            
-            // Initial render - show all courses
-            resourceManager.renderCourses('studies-grid');
-            
-            // Initialize filters
-            initializeResourceFilters(resourceManager);
-        })();
+        let resourceManager = null;
+        
+        // Initialize resources only after auth is confirmed
+        async function initializeResources() {
+            try {
+                resourceManager = new ResourceManager();
+                await resourceManager.loadResources();
+                
+                // Initial render - show all courses
+                resourceManager.renderCourses('studies-grid');
+                
+                // Initialize filters
+                initializeResourceFilters(resourceManager);
+            } catch (error) {
+                console.error('Error initializing resources:', error);
+                const grid = document.getElementById('studies-grid');
+                if (grid) {
+                    grid.innerHTML = '<div style="grid-column: 1 / -1; text-align: center; padding: 3rem; color: var(--text-light);">Error loading studies. Please refresh the page.</div>';
+                }
+            }
+        }
         
         if (typeof crosslifeAuth !== 'undefined') {
-            // Handle logout FIRST to update localStorage before requireAuth redirects
-            crosslifeAuth.on('logout', function() {
-                localStorage.setItem('crosslife-auth-state', 'logged-out');
-                document.documentElement.className = 'logged-out';
-                window.location.href = '/index.html';
-            });
-            
             crosslifeAuth.on('init', function(user) {
                 if (!user) {
                     // User not logged in, redirect to home
@@ -668,15 +671,24 @@
                     return;
                 }
                 
-                var state = user ? 'logged-in' : 'logged-out';
+                var state = 'logged-in';
                 localStorage.setItem('crosslife-auth-state', state);
                 document.documentElement.className = state;
                 
-                // Set up button handlers after nav is displayed
+                // Set up button handlers
                 var loginBtn = document.getElementById('loginBtn');
                 var logoutBtn = document.getElementById('logoutBtn');
                 if (loginBtn) loginBtn.onclick = function() { crosslifeAuth.open(); };
                 if (logoutBtn) logoutBtn.onclick = function() { crosslifeAuth.logout(); };
+                
+                // Load resources after auth is confirmed
+                initializeResources();
+            });
+            
+            crosslifeAuth.on('logout', function() {
+                localStorage.setItem('crosslife-auth-state', 'logged-out');
+                document.documentElement.className = 'logged-out';
+                window.location.href = '/index.html';
             });
             
             crosslifeAuth.on('login', function() {
