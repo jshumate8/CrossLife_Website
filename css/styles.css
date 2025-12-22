@@ -490,15 +490,6 @@ ul {
     position: relative;
 }
 
-.content-image::after,
-.study-image::after,
-.series-image::after {
-    content: '📖';
-    position: absolute;
-    font-size: 4rem;
-    opacity: 0.2;
-}
-
 .content-image img,
 .study-image img,
 .series-image img {
