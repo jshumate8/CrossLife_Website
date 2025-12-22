@@ -84,8 +84,9 @@
                 </div>
             </div>
         </section>
+    </main>
 
-        <section class="study-features">
+    <footer>
                     <!-- Exegetical Studies - New Testament -->
                     <div class="study-card" data-category="new-testament">
                         <div class="study-image">
@@ -642,9 +643,18 @@
     <script src="js/resources.js"></script>
     <script>
         let resourceManager = null;
+        let resourcesInitialized = false;
         
         // Initialize resources only after auth is confirmed
         async function initializeResources() {
+            if (resourcesInitialized) {
+                console.log('Resources already initialized, skipping...');
+                return;
+            }
+            
+            resourcesInitialized = true;
+            console.log('Initializing resources...');
+            
             try {
                 resourceManager = new ResourceManager();
                 await resourceManager.loadResources();
@@ -654,8 +664,11 @@
                 
                 // Initialize filters
                 initializeResourceFilters(resourceManager);
+                
+                console.log('Resources initialized successfully');
             } catch (error) {
                 console.error('Error initializing resources:', error);
+                resourcesInitialized = false; // Allow retry on error
                 const grid = document.getElementById('studies-grid');
                 if (grid) {
                     grid.innerHTML = '<div style="grid-column: 1 / -1; text-align: center; padding: 3rem; color: var(--text-light);">Error loading studies. Please refresh the page.</div>';
@@ -664,12 +677,22 @@
         }
         
         if (typeof crosslifeAuth !== 'undefined') {
+            let authInitialized = false;
+            
             crosslifeAuth.on('init', function(user) {
+                if (authInitialized) {
+                    console.log('Auth already initialized, skipping...');
+                    return;
+                }
+                
                 if (!user) {
                     // User not logged in, redirect to home
                     window.location.href = '/index.html';
                     return;
                 }
+                
+                authInitialized = true;
+                console.log('Auth initialized for user');
                 
                 var state = 'logged-in';
                 localStorage.setItem('crosslife-auth-state', state);
