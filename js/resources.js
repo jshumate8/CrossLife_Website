@@ -89,8 +89,7 @@ class ResourceManager {
 
         return `
             <div class="study-card" data-course-id="${course.id}" style="cursor: pointer;" onclick="window.location.href='course.html?id=${course.id}'">
-                <div class="study-image">
-                    <img src="${course.thumbnail}" alt="${course.title}" onerror="this.onerror=null; this.src='images/placeholder-study.jpg';">
+                <div class="study-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; min-height: 200px;">
                     ${statusBadge}
                 </div>
                 <div class="study-content">
