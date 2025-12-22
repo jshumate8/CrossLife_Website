@@ -6,7 +6,9 @@
     <meta name="description" content="Thank you for contacting CrossLife Ministry">
     <title>Thank You - CrossLife Ministry</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
         <script>
         (function() {
             var authState = localStorage.getItem('crosslife-auth-state') || 'logged-out';
@@ -54,7 +56,7 @@
                 <div class="thank-you-content" style="max-width: 600px; margin: 0 auto;">
                     <div style="font-size: 4rem; margin-bottom: 1rem;">✓</div>
                     <h1 style="color: var(--success-color); margin-bottom: 1rem;">Thank You!</h1>
-                    <h2 style="font-size: 1.5rem; font-weight: normal; margin-bottom: 2rem;">We've Received Your Request</h2>
+                    <h2 style="font-size: 1.5rem; font-weight: normal; margin-bottom: 2rem; color: var(--text-dark);">We've Received Your Request</h2>
                     
                     <div style="background-color: var(--bg-light); padding: 2rem; border-radius: var(--border-radius); margin-bottom: 2rem;">
                         <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-color);">
@@ -63,17 +65,17 @@
                     </div>
 
                     <div class="next-steps" style="text-align: left; margin-bottom: 2rem;">
-                        <h3 style="margin-bottom: 1rem;">What Happens Next?</h3>
+                        <h3 style="margin-bottom: 1rem; color: var(--text-dark);">What Happens Next?</h3>
                         <ul style="list-style: none; padding: 0;">
-                            <li style="padding: 0.5rem 0; padding-left: 2rem; position: relative;">
+                            <li style="padding: 0.5rem 0; padding-left: 2rem; position: relative; color: var(--text-dark);">
                                 <span style="position: absolute; left: 0; color: var(--secondary-color);">1.</span>
                                 We'll review your request
                             </li>
-                            <li style="padding: 0.5rem 0; padding-left: 2rem; position: relative;">
+                            <li style="padding: 0.5rem 0; padding-left: 2rem; position: relative; color: var(--text-dark);">
                                 <span style="position: absolute; left: 0; color: var(--secondary-color);">2.</span>
                                 A team member will contact you via email
                             </li>
-                            <li style="padding: 0.5rem 0; padding-left: 2rem; position: relative;">
+                            <li style="padding: 0.5rem 0; padding-left: 2rem; position: relative; color: var(--text-dark);">
                                 <span style="position: absolute; left: 0; color: var(--secondary-color);">3.</span>
                                 We'll assist with your donation update
                             </li>
