@@ -12,7 +12,8 @@ window.crosslifeConfig = {
     // Web3Forms Configuration
     // Get your access key from: https://web3forms.com/
     web3forms: {
-        accessKey: 'b5d7a61a-fa2a-4dfc-8794-bfb8a1d61e65'
+        contactForm: 'b5d7a61a-fa2a-4dfc-8794-bfb8a1d61e65',
+        donationUpdateForm: '9e8f1dde-f036-40c0-847a-31e17cce3f3c'
     }
 };
 

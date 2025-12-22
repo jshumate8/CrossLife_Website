@@ -131,7 +131,18 @@ class Web3FormsHandler {
     }
 }
 
-// Initialize when config is available
-if (window.crosslifeConfig && window.crosslifeConfig.web3forms.accessKey !== 'YOUR_WEB3FORMS_ACCESS_KEY_HERE') {
-    window.web3FormsHandler = new Web3FormsHandler(window.crosslifeConfig.web3forms.accessKey);
+// Initialize handlers for different forms when config is available
+if (window.crosslifeConfig && window.crosslifeConfig.web3forms) {
+    // Support old format (single accessKey) and new format (multiple keys)
+    const keys = window.crosslifeConfig.web3forms;
+    if (keys.contactForm) {
+        window.web3FormsContactHandler = new Web3FormsHandler(keys.contactForm);
+    }
+    if (keys.donationUpdateForm) {
+        window.web3FormsDonationHandler = new Web3FormsHandler(keys.donationUpdateForm);
+    }
+    // Backward compatibility - keep default handler
+    if (keys.accessKey) {
+        window.web3FormsHandler = new Web3FormsHandler(keys.accessKey);
+    }
 }
