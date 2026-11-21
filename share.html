@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Downloadable Bible study resources and materials">
+    <title>Share - CrossLife Ministry</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+        <script>
+        (function() {
+            var authState = localStorage.getItem('crosslife-auth-state') || 'logged-out';
+            document.documentElement.className = authState;
+        })();
+    </script>
+    <style>
+        #nav-logged-out, #nav-logged-in { display: none; }
+        .logged-out #nav-logged-out { display: flex; }
+        .logged-in #nav-logged-in { display: flex; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html"><h1>CrossLife</h1></a>
+                </div>
+                <ul class="nav-links" id="nav-logged-out">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="donate.html" class="donate-btn">Donate</a></li>
+                    <li><button type="button" id="loginBtn" class="login-btn">Login</button></li>
+                </ul>
+                <ul class="nav-links" id="nav-logged-in">
+                    <li><a href="study.html">Study</a></li>
+                    <li><a href="watch.html">Watch</a></li>
+                    <li><a href="share.html">Share</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="donate.html" class="donate-btn">Donate</a></li>
+                    <li><button type="button" id="logoutBtn" class="login-btn">Logout</button></li>
+                </ul>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Share</h1>
+                <p>Tools and resources for sharing the Gospel</p>
+            </div>
+        </section>
+
+        <section class="resources-section">
+            <div class="container">
+                <div class="resources-intro">
+                    <p>All resources are available for free download. These materials are designed to support your personal study and small group discussions.</p>
+                </div>
+
+                <div class="resource-categories">
+                    <div class="category-section">
+                        <h2>Study Guides</h2>
+                        <div class="resources-grid">
+                            <div class="resource-item">
+                                <div class="resource-icon">📄</div>
+                                <div class="resource-info">
+                                    <h3>Resource Title</h3>
+                                    <p>Brief description of the resource and what it contains...</p>
+                                    <div class="resource-meta">
+                                        <span>PDF • 2.5 MB</span>
+                                        <span>15 pages</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-download">Download</a>
+                            </div>
+
+                            <!-- Add more resource items -->
+                        </div>
+                    </div>
+
+                    <div class="category-section">
+                        <h2>Reference Materials</h2>
+                        <div class="resources-grid">
+                            <div class="resource-item">
+                                <div class="resource-icon">📚</div>
+                                <div class="resource-info">
+                                    <h3>Bible Reading Plan</h3>
+                                    <p>A comprehensive reading plan to go through the entire Bible in one year</p>
+                                    <div class="resource-meta">
+                                        <span>PDF • 500 KB</span>
+                                        <span>5 pages</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-download">Download</a>
+                            </div>
+
+                            <div class="resource-item">
+                                <div class="resource-icon">📖</div>
+                                <div class="resource-info">
+                                    <h3>Books of the Bible Overview</h3>
+                                    <p>Quick reference guide with summaries of each book</p>
+                                    <div class="resource-meta">
+                                        <span>PDF • 1.2 MB</span>
+                                        <span>8 pages</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-download">Download</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-section">
+                        <h2>Teaching Notes</h2>
+                        <div class="resources-grid">
+                            <div class="resource-item">
+                                <div class="resource-icon">✏️</div>
+                                <div class="resource-info">
+                                    <h3>Series Name - Complete Notes</h3>
+                                    <p>Compiled notes from the entire teaching series</p>
+                                    <div class="resource-meta">
+                                        <span>PDF • 3.8 MB</span>
+                                        <span>45 pages</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-download">Download</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-section">
+                        <h2>Devotional Materials</h2>
+                        <div class="resources-grid">
+                            <div class="resource-item">
+                                <div class="resource-icon">🙏</div>
+                                <div class="resource-info">
+                                    <h3>30-Day Devotional</h3>
+                                    <p>Daily readings and reflections on [topic]</p>
+                                    <div class="resource-meta">
+                                        <span>PDF • 1.8 MB</span>
+                                        <span>35 pages</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-download">Download</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resource-notice">
+                    <h3>Copyright & Usage</h3>
+                    <p>All resources are provided free of charge for personal study and small group use. Please do not redistribute or sell these materials. For bulk printing or other uses, please <a href="contact.html">contact us</a>.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CrossLife Ministry</h3>
+                    <p>Equipping believers through biblical teaching</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="study.html">Study</a></li>
+                        <li><a href="watch.html">Watch</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support Our Ministry</h4>
+                    <p>Your generosity helps us continue providing free biblical resources.</p>
+                    <a href="donate.html" class="btn btn-small">Donate Now</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Stay Connected</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">Facebook</a>
+                        <a href="#" aria-label="YouTube">YouTube</a>
+                        <a href="#" aria-label="Email">Email</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CrossLife Ministry. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+        <script src="js/main.js"></script>
+    <script>
+        if (typeof crosslifeAuth !== 'undefined') {
+            // Handle logout FIRST to update localStorage before requireAuth redirects
+            crosslifeAuth.on('logout', function() {
+                localStorage.setItem('crosslife-auth-state', 'logged-out');
+                document.documentElement.className = 'logged-out';
+            });
+            
+            crosslifeAuth.on('init', function(user) {
+                var state = user ? 'logged-in' : 'logged-out';
+                localStorage.setItem('crosslife-auth-state', state);
+                document.documentElement.className = state;
+                
+                // Set up button handlers after nav is displayed
+                var loginBtn = document.getElementById('loginBtn');
+                var logoutBtn = document.getElementById('logoutBtn');
+                if (loginBtn) loginBtn.onclick = function() { crosslifeAuth.open(); };
+                if (logoutBtn) logoutBtn.onclick = function() { crosslifeAuth.logout(); };
+            });
+            
+            crosslifeAuth.on('login', function() {
+                localStorage.setItem('crosslife-auth-state', 'logged-in');
+                document.documentElement.className = 'logged-in';
+                crosslifeAuth.close();
+            });
+        }
+    </script>
+    <script>requireAuth();</script>
+</body>
+</html>
+
+
+
+
